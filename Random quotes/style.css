@@ -55,15 +55,19 @@ html, body {
   content:"—";
 }
 
-.button, .button:active, .button:focus {
-  background-color: transparent;
-  border: 1px solid gold;
-  color: gold;
+.button {
   font-size: 18px;
   padding: 5px;
   margin: 10px;
   outline: 0;
   transition: background-color ease 0.3s;
+}
+
+
+.button, .button:active, .button:focus {
+  background-color: transparent;
+  border: 1px solid gold;
+  color: gold;
 }
 
 .button:hover {
@@ -76,8 +80,6 @@ html, body {
 
 .button:active {
   outline: 0;
-  /* padding: 9px 3px 3px 9px; */
-  /* margin 10px; */
 }
 
 .buttons {
