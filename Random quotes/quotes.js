@@ -35,7 +35,7 @@ function generateQuote() {
         document.getElementsByClassName("tweet-link")[0].setAttribute("href",
                 "https://twitter.com/intent/tweet?" + //
                 "text=" + entry.quote + //
-                "&hashtags=quote," + entry.author.replace(' ',''));
+                "&hashtags=quote," + entry.author.replace(/\s/g,''));
     });
     $(".next-button").html(buttonLines[Math.floor(Math.random()*buttonLines.length)]);
     $(".top-wrapper").css("background-image","url('img/" +
