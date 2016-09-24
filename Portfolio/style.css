@@ -1,0 +1,374 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+body {
+  color: white;
+  font-family: 'Raleway', sans-serif;
+  font-size: 25px;
+  font-weight: 200;
+}
+
+
+/********* Navbar definitions **********/
+.navigation {
+  background: rgba(0, 0, 0, 0.0);
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 20;
+  position: relative;
+}
+
+.nav-list {
+  background-color: transparent;
+  left: 0;
+  list-style-type: none;
+  overflow: hidden;
+  padding: 0;
+  right: 0;
+  width: 100%;
+  position: absolute;
+  top: 50px;
+}
+
+.nav-list li {
+  display: inline-block;
+  text-transform: uppercase;
+}
+
+.nav-list li a {
+  color: white;
+  display: inline-block;
+  position: relative;
+  padding-bottom: 1px;
+  margin-right: 40px;
+  width: 100%;
+}
+
+.nav-list li a:hover, a:active {
+  text-decoration: none !important;
+  color: #cccccc;
+}
+
+.nav-list li a::after {
+  content: '';
+  display: block;
+  margin: auto;
+  height: 1px;
+  width: 0;
+  background: transparent;
+  transition: width .3s ease;
+}
+
+.nav-list li a:hover::after {
+  width: 100%;
+  background: white;
+}
+
+
+/********* End navbar definitions ******/
+
+/******** Paralax definitions *********/
+
+.paralax {
+  background-color: black;
+  height: 100vh;
+  margin: 0 0 0 0;
+  overflow-x: hidden;
+  overflow-y: overflow;
+  perspective: 10px;
+  position: relative;
+}
+
+.paralax_layer {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.paralax_group {
+  -webkit-transform-style: preserve-3d;
+  /* min-height: 100vh; */
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+.paralax_layer_base {
+  transform: scale(1.0); /* Weird problem with scale */ 
+}
+
+.paralax_layer_bg {
+  transform: translateZ(-3px) scale(1.31); /* Weird problem with scale */ 
+}
+
+.paralax_layer_bbg {
+  transform: translateZ(-3px) scale(1.31); /* Weird problem with scale */ 
+}
+
+.paralax_layer_bbbg {
+  transform: translateZ(-5px) scale(1.51); /* Weird problem with scale */ 
+}
+/******** End paralax definitions *******/
+
+/******** Header definitions ************/
+
+#header-img {
+  background-image: url("./assets/laptop_cropped.jpg");
+  background-size: cover;
+}
+
+.overlay {
+  background-color: black;
+  opacity: 0.5;
+}
+
+#header-content {
+  position: relative;
+  text-align: justify;
+  /* width: 250px; */
+}
+
+.header-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: scale(0.8);
+  z-index: 20;
+}
+
+.header {
+  margin-bottom: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-top: 0;
+}
+/********** End header definitions ***********/
+
+
+/********** About definitions ****************/
+.about {
+  background-color: #ba9077;
+  position: relative;
+  z-index: 1;
+}
+
+.about-img {
+  height: 300px;
+}
+
+
+#me {
+  -webkit-transform: translate(-50%, 0%);
+  -moz-transform: translate(-50%, 0%);
+  border-radius: 50%;
+  left: 50%;
+  position: relative;
+  right: 50%;
+  transform: translate(-50%, 0%);
+  width: 200px;
+  height: 200px;
+}
+
+
+/********** End About definitions ************/
+
+/********** Desk image ***********************/
+/********** End desk image *******************/
+
+/********** Portfolio definitions ************/
+.portfolio {
+  background-color: #8ab6bf;
+  position: relative;
+}
+
+.thumbnails {
+}
+
+.placeholder {
+  background-color: #89bdd3;
+  height: 200px;
+  position: relative;
+  margin: 20px 20px 20px 20px;
+}
+
+/********** End portfolio definitions ********/
+.img-slide{
+  min-height: 100vh;
+}
+
+.desk {
+  background-size: cover;
+  background-image: url('./assets/desk.jpg');
+  z-index: -10
+}
+
+.coffee {
+  background-size: cover;
+  background-image: url('./assets/coffee.jpg');
+  z-index: -20;
+}
+
+
+/********** Contact section ******************/
+.contact {
+  background-color: #b3c2bf;
+  position: relative;
+}
+
+label {
+  display: none;
+}
+
+#message {
+  height: 200px;
+}
+
+.form-control {
+  color: white;
+  background-color: #b3c2bf;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.form-control:not(:focus) {
+  border: 1px solid white;
+  border-radius: 0;
+  border-width: 1;
+  box-shadow: none;
+}
+
+/* do not group these rules */
+.form-control::-webkit-input-placeholder {
+    color: white;
+}
+.form-control:-moz-placeholder {
+    /* FF 4-18 */
+    color: white;
+}
+.form-control::-moz-placeholder {
+    /* FF 19+ */
+    color: white;
+}
+.form-control:-ms-input-placeholder {
+    /* IE 10+ */
+    color: white;
+}
+
+/********** End contact section ***************/
+
+
+/********** Space cowboy section **************/
+.space {
+  background-color: #1d2120;
+  height: 100vh;
+  position: relative;
+}
+
+.space p {
+  bottom: 10px;
+  font-family: Alegreya, serif;
+  font-size: 40px;
+  font-style: italic;
+  font-weight: 700;
+  position: absolute;
+  right: 20px;
+  text-transform: uppercase;
+}
+/********** End space cowboy section **********/
+
+
+.content {
+  padding: 20px 20px 40px 20px;
+}
+
+.header {
+  color: white;
+  font-family: 'Josefin Sans', 'Open Sans Condensed', 'Dosis', sans-serif;
+  opacity: 0.9;
+  text-transform: uppercase;
+  transform: scaleY(1.2);
+  padding: 0;
+}
+
+h1 {
+  color: white;
+  font-family: 'Josefin Sans', 'Open Sans Condensed', 'Dosis', sans-serif;
+  font-size: 80px;
+  opacity: 0.9;
+  padding: 20px 0 10px 0;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 31px;
+}
+
+h3 {
+  border-bottom: 1px solid white;
+  font-size: 31px;
+}
+
+em {
+  font-style: normal;
+  font-weight: 500;
+}
+
+.skills {
+  padding: 10px;
+  font-size: 70px;
+  display: inline-block;
+}
+
+.social-icons {
+  text-align: center;
+}
+
+.social-icons .fa {
+  margin: 10px;
+  font-size: 35px;
+}
+
+a, a:visited {
+  text-decoration: none !important;
+  color: white;
+}
+
+a:hover, a:active {
+  color: #cccccc;
+  text-decoration: none !important;
+}
+
+11
+/********** Paralax groups **************/
+#group1 {
+  z-index: -10;
+}
+
+#group2 {
+  z-index: 10;
+}
+
+#group3 {
+  z-index: -20;
+}
+
+#group4 {
+  z-index: 20;
+}
+
+#group5 {
+  z-index: -10;
+}
+
+#group6 {
+  z-index: 30;
+}
+
+#group7 {
+  z-index: 40;
+}

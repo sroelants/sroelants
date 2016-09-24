@@ -1,0 +1,90 @@
+html, body {
+  background-color: black;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  color: white;
+  font-family: "Rubik";
+}
+
+.top-wrapper {
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  width: 100%;
+  postion: relative;
+  transition: background-image 0.5s linear;
+}
+
+.overlay {
+  height: 100vh;
+  background-color: black;
+  opacity: 0.7;
+  position: relative;
+  top: 0;
+}
+
+
+.quote-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: height 0.3s ease;
+}
+
+.quote-mark {
+  color: gold;
+  font-size: 120px;
+  opacity: 0.3;
+  position: absolute;
+  top: -20px;
+  left: -60px;
+  z-index: -10;
+}
+
+.quote {
+  font-size: 25px;
+  font-style: italic;
+}
+.author {
+  text-align: right;
+  font-size: 16px;
+}
+.author p::before {
+  content:"—";
+}
+
+.button, .button:active, .button:focus {
+  background-color: transparent;
+  border: 1px solid gold;
+  color: gold;
+  font-size: 18px;
+  padding: 5px;
+  margin: 10px;
+  outline: 0;
+  transition: background-color ease 0.3s;
+}
+
+.button:hover {
+  background-color: gold;
+  color: #444;
+  margin: 10px;
+  cursor: pointer;
+  outline: 0;
+}
+
+.button:active {
+  outline: 0;
+  /* padding: 9px 3px 3px 9px; */
+  /* margin 10px; */
+}
+
+.buttons {
+  text-align: right;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}

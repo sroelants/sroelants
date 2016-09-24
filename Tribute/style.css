@@ -1,0 +1,90 @@
+body {
+  font-family: 'Libre Baskerville', serif;
+  font-color: #3e3e3e;
+}
+
+p {
+  text-align: justify;
+  line-height: 1.8em;
+}
+#title {
+  font-family: 'Great Vibes', serif;
+  font-size: 80px;
+}
+
+#subtitle {
+  color: #888888;
+}
+
+#banner {
+  height: 300px;
+  width: 100%;
+  background-color: #aaaaaa;
+  background-image: url("assets/piano.jpg");
+  background-size: cover;
+  position: fixed;
+}
+
+#main {
+  position: relative;
+  top: 300px;
+  background-color: #3e3e3e;
+}
+
+#content {
+  height: 100%;
+  background-color: #f5f5f5;
+  padding: 20px 0px 0px 0px;
+  margin-left: -1 px;
+  -webkit-backface-visibility: hidden;
+}
+
+#sidebar {
+  height: 100%;
+  min-height: 100%;
+  color: #f5f5f5;
+}
+
+#sidebar-pic {
+  margin-top: -100px;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  background-image: url("assets/chopin.jpg");
+  background-size: cover;
+  position: relative;
+}
+
+#sidebar-content {
+  margin-top: 20px;
+  height: 100%;
+  min-height: 100%;
+  position: relative;
+  font-size: 16px;
+  text-align: center;
+  color: #aaaaaa;
+}
+
+#sidebar-content p {
+  text-align: center;
+}
+#sidebar-content h3 {
+  font-family: Raleway, sans-serif;
+  font-size: 20px;
+  color: #555555;
+}
+
+.black {
+  background-color: #3e3e3e;
+  color: #f5f5f5;
+  padding: 20px;
+}
+
+.white {
+  padding: 20px;
+  background-color: #f5f5f5;
+  }
+
+  a {
+    color: #aaaaaa;
+  }
