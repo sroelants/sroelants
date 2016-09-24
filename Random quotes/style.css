@@ -91,15 +91,15 @@ a {
 
 @media (orientation: portrait) {
   .quote {
-    font-size: 60px;
+    font-size: 40px;
   }
 
   .author {
-    font-size: 50px;
+    font-size: 30px;
   }
 
   .button {
-    font-size: 50px;
+    font-size: 30px;
   }
 
 }
