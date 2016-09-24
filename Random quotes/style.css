@@ -100,7 +100,7 @@ a {
     font-size: 30px;
   }
 
-  .button {
+  .button, .button:active, .button:focus, .button:hover {
     font-size: 30px;
   }
 
