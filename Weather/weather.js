@@ -6,9 +6,6 @@ $(document).ready( function(){
                 pos.coords.latitude + "&lon=" + pos.coords.longitude +
                 "&appid=" + key;
 
-            // console.log(url);
-            url =  "weather.json";
-
             $.getJSON(url, function(json) {
                 $(".weather-location").html(json.name);
                 $(".temperature-stat-number").html(Math.round(json.main.temp - 273.15));
