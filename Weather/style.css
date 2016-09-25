@@ -6,7 +6,7 @@ html, body {
 }
 
 body {
-  color: #333
+  color: #333;
 }
 
 
@@ -67,4 +67,16 @@ body {
 }
 .temperature-stat-unit:hover, .wind-stat-unit:hover {
   color: #999;
+}
+
+footer {
+  font-size: 12px;
+  position: absolute;
+  bottom: 10px;
+  text-align: center;
+  width: 100%;
+}
+footer a{
+  color: #666;
+  text-decoration: none;
 }
