@@ -7,7 +7,7 @@ $(document).ready( function(){
                 "&appid=" + key;
 
             // console.log(url);
-            // url =  "weather.json";
+            url =  "weather.json";
 
             $.getJSON(url, function(json) {
                 $(".weather-location").html(json.name);
@@ -16,8 +16,7 @@ $(document).ready( function(){
                 $(".humidity-stat-number").html(Math.round(json.main.humidity));
                 $(".weather-graphic").css("background-image",
                         "url('img/" + json.weather[0].main + ".png')"); 
-                console.log( json.weather[0].main + ".png");
-                switch (json.weather[0].main) {
+                switch ( json.weather[0].main) {
                     case "Thunderstorm":
                         $('body').css("background-color", "#555");
                         break;
@@ -27,7 +26,7 @@ $(document).ready( function(){
                     case "Snow":
                         $('body').css("background-color", "#efefef");
                         break;
-                    case "'Rain'":
+                    case "Rain":
                         $('body').css("background-color", "#999");
                         break;
                     case "Drizzle":
