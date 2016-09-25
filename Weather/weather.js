@@ -2,7 +2,7 @@ $(document).ready( function(){
     var key = "98ecd1d6e3e7b3c8f330cd242d4a2dec";
     if(navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function(pos) {
-            var url = "http://api.openweathermap.org/data/2.5/weather?lat=" +
+            var url = "https://api.openweathermap.org/data/2.5/weather?lat=" +
                 pos.coords.latitude + "&lon=" + pos.coords.longitude +
                 "&appid=" + key;
 
