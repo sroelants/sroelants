@@ -10,11 +10,15 @@ body {
   color: white;
 }
 
-form {
+.top-wrapper {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  transition: top 0.5s ease;
+}
+
+form {
   background-color: #222;
   border-radius: 2px;
 }
@@ -63,3 +67,79 @@ button:active, button:focus {
   border: none;
   outline: none;
 }
+
+.submit:active {
+  color: #eee;
+  transform: translate(1px, 1px);
+}
+
+.random {
+  font-size: 14px;
+  width: 100%;
+  text-align: right;
+  margin-top: 10px;
+}
+
+.random a {
+  color: #aaa;
+  padding: 5px;
+  background-color: #222;
+}
+
+.random a:hover {
+  color: #ccc;
+  background-color: #2a2a2a;
+}
+
+.random a:active {
+  color: #eee;
+}
+
+.top {
+  top: 0;
+  transform: translate(-50%, 0);
+  margin-top: 20px;
+}
+
+.results {
+  position: relative;
+  top: 100px;
+  width: 80%;
+  margin: auto;
+
+}
+
+.result {
+  background-color: #222; 
+  padding: 10px;
+  margin: 10px;
+  opacity: 1;
+}
+
+
+h1 {
+  font-size: 18px;
+}
+
+.result p {
+  font-size: 14px;
+  font-style: italic;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+a div {
+  border-left: 0;
+  background-color: #222;
+  transform: translateX(0);
+  transition: all 0.3s ease;
+}
+a:hover div {
+  /* border-left: 4px solid #ddd; */
+  transform: translateX(4px);
+  background-color: #2a2a2a;
+}
+
