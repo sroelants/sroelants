@@ -5,6 +5,9 @@ $(document).ready( function(){
             var url = "//api.openweathermap.org/data/2.5/weather?lat=" +
                 pos.coords.latitude + "&lon=" + pos.coords.longitude +
                 "&appid=" + key;
+            // var url = "https://api.darksky.net/forecast/dfcded8c4d1198883ba260c1284e77b5/" +
+            //     pos.coords.latitude + "," + pos.coords.longitude + "/?" +
+            //     "&exclude=minutely,hourly,daily,alerts,flags&units=si"
 
             $.getJSON(url, function(json) {
                 $(".weather-location").html(json.name);
