@@ -1,10 +1,16 @@
 $(document).ready(function() {
     $('.search-form').submit(function(e) {
         e.preventDefault();
+        if(! $('.top-wrapper').hasClass("top")) {
+            $('.top-wrapper').addClass('top'); 
+            setTimeout(function() {}, 700);
+        }
+            $('.results').empty();
+
         if ($('.searchbar').val() != "" ) { // Don't slide up if not really searching
             $.getJSON("https://en.wikipedia.org/w/api.php?action=query&format=json&list=search&srsearch=" + $('.searchbar').val() + "&srprop=snippet&origin=*", function(json) {
-                $('.top-wrapper').addClass('top'); 
-                setTimeout(function() { // Delay until slide is complete.
+                    $('.results').hide()
+
                     for(var i = 0; i < json.query.search.length; i++) {
                         result = '<a href="https://en.wikipedia.org/wiki/' 
                             + json.query.search[i].title + 
@@ -12,12 +18,9 @@ $(document).ready(function() {
                             json.query.search[i].title + '</h1>' +
                             '<p>' + json.query.search[i].snippet + '</p>'+
                             '</div></a>';
-                        $(result).hide().appendTo($('.results')).fadeIn(500);
+                        $(result).appendTo($('.results'));
                     } 
-                //     $('.results').children().each(function(i, el) {
-                //         $(this).removeClass("hidden", 300);
-                //     });
-                }, 500);
+                    $('.results').fadeIn(500);
             });
         };
     });
