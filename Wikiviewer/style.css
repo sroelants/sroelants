@@ -143,3 +143,24 @@ a:hover div {
   transform: translateX(4px);
   background-color: #2a2a2a;
 }
+
+footer {
+  font-size: 12px;
+  color: #888;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+footer a {
+  color: #aaa;
+}
+footer a:hover {
+  color: #ccc;
+}
+
+footer a:active {
+  color: #eee;
+}
+
