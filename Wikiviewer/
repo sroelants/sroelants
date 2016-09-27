@@ -1,0 +1,35 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #666;
+  font-family: 'Rubik', sans-serif;
+  color: white;
+}
+
+form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.searchbar {
+  background-color: #666;
+  border:solid white;
+  width: 400px;
+  line-width: 1.4px;
+  padding: 5px;
+  color: white;
+  margin: 0;
+}
+.submit {
+  background-color: #666;
+  color: white; 
+  border: 1px solid white;
+  border-radius: 0 50% 50% 0;
+  padding: 5px;
+  margin: 0;
+}
