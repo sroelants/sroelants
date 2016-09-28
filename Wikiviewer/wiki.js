@@ -5,7 +5,7 @@ $(document).ready(function() {
             $('.top-wrapper').addClass('top'); 
             setTimeout(function() {}, 700);
         }
-            $('.results').empty();
+            
 
         if ($('.searchbar').val() != "" ) { // Don't slide up if not really searching
             $.getJSON("https://en.wikipedia.org/w/api.php?action=query&format=json&list=search&srsearch=" + $('.searchbar').val() + "&srprop=snippet&origin=*", function(json) {
