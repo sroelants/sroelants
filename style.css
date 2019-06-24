@@ -1,0 +1,111 @@
+/* General page styling */
+body {
+  background: #F9F9F9;
+  color: rgba(44, 44, 44, 1);
+  font-family: 'Rubik', sans-serif;
+  font-size: 16px;
+  }
+
+.content {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 50px;
+}
+
+h1 {
+  color: rgba(44, 44, 44, 1);
+  width: 100%;
+  border-bottom: solid  rgba(0, 158, 224, 1) 1px;
+  font-size: 32px;
+  font-weight: 400;
+}
+
+a {
+  text-decoration: none;
+  color: rgba(44, 44, 44, 1);
+}
+
+a:hover {
+  color: rgba(0, 158, 224, 1);
+}
+
+
+/* Header styling */
+
+header {
+  display: flex;
+}
+
+.name {
+  font-size: 60px;
+  color: rgba(0, 158, 224, 1);
+  text-align: right;
+  display: inline-block;
+  font-weight: 500;
+}
+
+#roelants {
+  margin-top: -0.3em;
+}
+
+.contact {
+  margin-left: 20px;
+  padding: 1em 0 0.5em 0;
+}
+
+dl {
+  height: 100%; 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0;
+}
+
+dt {
+  float: left;
+  clear: left;
+  color: rgba(0, 158, 224, 1);
+  text-align: right;
+}
+
+dd {
+  margin-inline-start: 1.5em;
+}
+
+.glyph {
+  width: 1em;
+}
+
+section {
+  margin:  50px 0px 50px 0px;
+}
+
+.item {
+  display: flex;
+  margin-top: 20px;
+}
+
+.date {
+  min-width: 150px;
+  font-weight: bold;
+}
+
+.title {
+  font-weight: bold;
+}
+.description {
+  padding-top: 10px;
+  font-style: italic;
+}
+
+/* Skills styling */
+
+#skills > ul {
+  list-style: none; 
+  padding: 0px;
+  margin: 0px;
+}
+
+#skills > ul > li {
+  padding: 0px 0px 20px 0px;
+}
