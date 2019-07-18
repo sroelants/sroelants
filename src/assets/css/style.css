@@ -1,5 +1,8 @@
 /* Colours */
 /* General page styling */
+html {
+  overflow-y: scroll; }
+
 body {
   background: #F9F9F9;
   color: #2c2c2c;
@@ -10,10 +13,8 @@ body {
 nav {
   font-size: 20px;
   font-weight: 400;
-  padding-bottom: 30px; }
+  padding-top: 10px; }
   nav ul {
-    margin-top: 0;
-    margin-left: 0;
     padding: 0;
     display: flex;
     list-style: none; }
@@ -24,10 +25,12 @@ nav {
     nav ul li.active span {
       border-bottom: 3px solid #009ee0; }
 
+/* Content styling */
 .content {
-  max-width: 700px;
+  width: 700px;
   margin: 0 auto;
-  padding: 20px 0 50px 0; }
+  padding: 50px 0 50px 0;
+  overflow: hidden; }
 
 h1 {
   color: #2c2c2c;

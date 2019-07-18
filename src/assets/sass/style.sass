@@ -4,6 +4,8 @@ $fg-black: rgba(44, 44, 44, 1)
 $hl-blue: rgba(0, 158, 224, 1)
 
 /* General page styling */
+html
+  overflow-y: scroll
 body
   background: $bg-white
   color: $fg-black
@@ -14,10 +16,8 @@ body
 nav 
   font-size: 20px
   font-weight: 400
-  padding-bottom: 30px
+  padding-top: 10px
   ul
-    margin-top: 0
-    margin-left: 0
     padding: 0
     display: flex
     list-style: none
@@ -30,11 +30,13 @@ nav
       span
         border-bottom: 3px solid $hl-blue
 
+/* Content styling */
 
 .content
-  max-width: 700px
-  margin: 0 auto
-  padding: 20px 0 50px 0
+  width: 700px
+  margin: 0 auto 
+  padding: 50px 0 50px 0
+  overflow: hidden
 
 
 h1
