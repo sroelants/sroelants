@@ -7,7 +7,7 @@
     "clean": "rm -rf dist",
     "build:sass": "node-sass -o src/assets/css src/assets/sass/*.sass",
     "build:eleventy": "npx @11ty/eleventy",
-    "serve": "browser-sync start --server 'dist' --files 'dist/assets/css/*.css, dist/assets/js/*.js'",
+    "serve": "browser-sync start --server 'dist' --files 'dist/*.html, dist/assets/css/*.css, dist/assets/js/*.js'",
     "watch:sass": "onchange 'src/assets/sass/*.sass' -- npm run build:sass",
     "watch:eleventy": "npx @11ty/eleventy --watch",
     "build:all": "npm run build:sass && npm run build:eleventy",
