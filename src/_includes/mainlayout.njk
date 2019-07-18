@@ -1,0 +1,60 @@
+---
+title: Sam Roelants
+---
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Rubik:400,500&display=swap"
+      rel="stylesheet">
+    <link href="./assets/css/style.css" rel="stylesheet">
+    <title>{{ title }}</title>
+  </head>
+  <body>
+    <div class="content">
+      {% block header %}
+      <header>
+        <div class="name">
+          <div id="sam">Sam</div>
+          <div id="roelants">Roelants</div>
+        </div>
+        <div class="contact">
+          <dl>
+            <div>
+              <dt><img src="./assets/img/envelope_icon.svg" class="glyph"></img></dt>
+              <dd class="address">165 Avenue Michel-Croz, 74400 Chamonix, France
+              </dd>
+            </div>
+            <div>
+              <dt><img src="./assets/img/at_icon.svg" class="glyph"></img></dt>
+              <dd class="email">
+                <a href="mailto: roelants.sam@gmail.com" target="_blank">
+                  roelants.sam@gmail.com
+                </a>
+              </dd>
+            </div>
+            <div>
+              <dt><img src="./assets/img/phone_icon.svg" class="glyph"></img></dt>
+              <dd class="phone">
+                <a href="tel:+33 656 704 307" target="_blank">+33 656 704 307
+                </a>
+              </dd>
+            </div>
+            <div>
+              <dt><img src="./assets/img/github_icon.svg" class="glyph"></img></dt>
+              <dd class="github">
+                <a href="http://www.github.com/sroelants" target="_blank">
+                  github.com/sroelants
+                </a>
+              </dd>
+            </div>
+          </ul>
+        </div>
+      </header>
+      {% endblock %}
+      {{ content | safe }}
+    </div>
+  </body>
+</html>
+
