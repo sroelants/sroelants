@@ -1,6 +1,5 @@
 ---
 title: Sam Roelants
-section: about
 ---
 <!doctype html>
 <html>
@@ -14,21 +13,6 @@ section: about
   </head>
   <body>
     <div class="content">
-      {% block navbar %}
-        <nav>
-          <ul>
-            <li {% if section == "about" %} class="active" {% endif %}>
-              <span><a href="/">About</a></span>
-            </li>
-            <li {% if section == "thoughts" %} class="active" {% endif %}>
-              <span><a href="./thoughts/">Thoughts</a></span>
-            </li>
-            <li {% if section == "resume" %} class="active" {% endif %}>
-              <span><a href="#">Resume</a></span>
-            </li>
-          </ul>
-        </nav>
-      {% endblock %}
       {% block header %}
       <header>
         <div class="name">
@@ -69,8 +53,22 @@ section: about
         </div>
       </header>
       {% endblock %}
+      {% block navbar %}
+      <nav>
+        <ul>
+          <li {% if section == "about" %} class="active" {% endif %}>
+            <span><a href="/">About</a></span>
+          </li>
+          <li {% if section == "thoughts" %} class="active" {% endif %}>
+            <span><a href="/thoughts/">Thoughts</a></span>
+          </li>
+          <li {% if section == "resume" %} class="active" {% endif %}>
+            <span><a href="/resume/">Resume</a></span>
+          </li>
+        </ul>
+      </nav>
+      {% endblock %}
       {{ content | safe }}
     </div>
   </body>
 </html>
-
