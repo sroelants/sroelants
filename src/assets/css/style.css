@@ -6,10 +6,28 @@ body {
   font-family: 'Rubik', sans-serif;
   font-size: 16px; }
 
+/* Navbar styling */
+nav {
+  font-size: 20px;
+  font-weight: 400;
+  padding-bottom: 30px; }
+  nav ul {
+    margin-top: 0;
+    margin-left: 0;
+    padding: 0;
+    display: flex;
+    list-style: none; }
+    nav ul li {
+      flex-grow: 1;
+      display: inline-block;
+      text-align: center; }
+    nav ul li.active span {
+      border-bottom: 3px solid #009ee0; }
+
 .content {
   max-width: 700px;
   margin: 0 auto;
-  padding: 50px 0 50px 0; }
+  padding: 20px 0 50px 0; }
 
 h1 {
   color: #2c2c2c;
