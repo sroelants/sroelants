@@ -1,5 +1,6 @@
 ---
 title: Sam Roelants
+section: about
 ---
 <!doctype html>
 <html>
@@ -13,6 +14,21 @@ title: Sam Roelants
   </head>
   <body>
     <div class="content">
+      {% block navbar %}
+        <nav>
+          <ul>
+            <li {% if section == "about" %} class="active" {% endif %}>
+              <span><a href="#">About</a></span>
+            </li>
+            <li {% if section == "thoughts" %} class="active" {% endif %}>
+              <span><a href="#">Thoughts</a></span>
+            </li>
+            <li {% if section == "resume" %} class="active" {% endif %}>
+              <span><a href="#">Resume</a></span>
+            </li>
+          </ul>
+        </nav>
+      {% endblock %}
       {% block header %}
       <header>
         <div class="name">
