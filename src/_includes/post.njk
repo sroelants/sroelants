@@ -1,0 +1,18 @@
+---
+layout: mainlayout.njk
+---
+<a href="/thoughts" class="back">← Back</a>
+<section id="post">
+  <article>
+    <h1>{{ title }}</h1>
+    <span class="posted-date">
+      <time datetime="{{ date | dateIso }}">{{ date | dateReadable }}</time>
+    </span>
+    {% for tag in tags %}
+      {% if tag != "post" %}
+    <a href="/thoughts/tags/{{ tag }}" class="tag">#{{ tag }}</a>
+      {% endif %}
+    {% endfor %}
+    {{ content | safe }}
+  </article>
+</section>
