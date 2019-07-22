@@ -1,6 +1,6 @@
 /* Colours */
 $bg-white: #F9F9F9
-$fg-black: rgba(44, 44, 44, 1)
+$fg-black: rgba(66, 66, 66, 1)
 $hl-blue: rgba(0, 158, 224, 1)
 
 /* General page styling */
@@ -9,11 +9,17 @@ html
 body
   background: $bg-white
   color: $fg-black
-  font-family: 'Rubik', sans-serif
+  font-family: 'Open Sans', sans-serif
   font-size: 16px
+
+p
+  text-align: justify
+h1, h2
+  font-family: 'Rubik', sans-serif
 
 /* Navbar styling */
 nav 
+  font-family: 'Rubik', sans-serif
   font-size: 20px
   font-weight: 400
   padding-top: 10px
@@ -38,6 +44,24 @@ nav
   padding: 50px 0 50px 0
   overflow: hidden
 
+.main
+  font-size: 18px
+  padding-top: 30px
+  a
+    text-decoration: underline solid $hl-blue
+
+// code
+//   padding: 0.15em 0.2em 0.05em
+//   border-radius: .3em
+//   // border: 0.13em solid #7a6652
+//   // box-shadow: 1px 1px 0.3em -0.1em #000 inset
+//   tab-size: 2
+//   hyphens: none
+//   font-family: Menlo, Monaco, "Courier New", monospace
+//   font-size: 14px
+//   background: #2a2a2a
+//   color: #fff
+//   text-shadow: none
 
 h1
   color: $fg-black
@@ -63,6 +87,7 @@ a:hover
 
 header
   display: flex
+  font-family: 'Rubik', sans-serif
 
 
 .name
@@ -106,7 +131,7 @@ dd
 
 
 section
-  margin:  50px 0px 50px 0px
+  margin:  0 0 50px 0
 
 
 .item
@@ -117,14 +142,17 @@ section
 .date
   min-width: 150px
   font-weight: bold
+  // font-family: 'Rubik', sans-serif
 
 
 .title
   font-weight: bold
+  // font-family: 'Rubik', sans-serif
 
 .description
   padding-top: 10px
   font-style: italic
+
 
 
 /* Skills styling */
@@ -140,7 +168,6 @@ section
 
 .posted-date
   margin-right: 1em
-  color: #999
   display: inline
   time
     margin: 0
@@ -148,4 +175,19 @@ section
 
 .tag 
   color: #999
+  text-decoration: none
   margin-left: 0.2em
+
+.post-metadata
+  color: #999
+  font-size: 16px
+  a
+    text-decoration: none
+
+#sam-photo
+  width: 250px
+  height: 250px
+  float: right
+  border-radius: 100%
+  shape-outside: circle(50%)
+  margin: 20px

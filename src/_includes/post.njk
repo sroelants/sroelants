@@ -1,18 +1,11 @@
 ---
 layout: mainlayout.njk
 ---
-<a href="/thoughts" class="back">← Back</a>
+<a href="/" class="back">← Back</a>
 <section id="post">
   <article>
     <h1>{{ title }}</h1>
-    <span class="posted-date">
-      <time datetime="{{ date | dateIso }}">{{ date | dateReadable }}</time>
-    </span>
-    {% for tag in tags %}
-      {% if tag != "post" %}
-    <a href="/thoughts/tags/{{ tag }}" class="tag">#{{ tag }}</a>
-      {% endif %}
-    {% endfor %}
+    {% metadata date, tags %}
     {{ content | safe }}
   </article>
 </section>

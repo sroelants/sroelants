@@ -5,9 +5,21 @@ section: thoughts
 ---
 <section id="thoughts">
   <h1> Thoughts</h1>
+  <p>
+  Consider this a little space to put the
+  thoughts and musings that I've written, or have yet to write.
+  From a more technical side, it'll also serve as a place for me to take notes as
+  I learn new technologies in the ever-evolving tech world. Most tinkerers and
+  perpetual learners will agree: aside from the official documentation, 
+  personal notes of people describing how they solved problems or configured tools 
+  are the single most useful source of information when grappling with new technologies.
+  </p>
 
-  A very uncurated list of things that occupy my mind. Expect to find
-  writings that span topics from coding and mathematics to music.
+
+  <p>
+  Let this, then, be my tiny contribution to the edifice that is the grand sum of
+  personal technical blogs.
+  </p>
 </section>
 
 
@@ -18,16 +30,8 @@ section: thoughts
   <h2>
     <a href="{{ post.url | url }}">{{ post.data.title }}</a>
   </h2>
-  <span class="posted-date">
-  <time datetime="{{ post.date | dateIso }}">{{ post.date | dateReadable }}
-  </time>
-  </span>
 
-  {% for tag in post.data.tags %}
-    {% if tag != "post" %}
-  <a href="/thoughts/tags/{{ tag }}" class="tag">#{{ tag }}</a>
-    {% endif %}
-  {% endfor %}
+  {% metadata post.date, post.data.tags %}
 
   <p>
   {{ post.data.description }} 

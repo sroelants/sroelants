@@ -6,10 +6,11 @@ title: Sam Roelants
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link type="text/css" href="https://fonts.googleapis.com/css?family=Rubik:400,500&display=swap"
-      rel="stylesheet">
+    <link type="text/css" href="https://fonts.googleapis.com/css?family=Rubik:400,500,700&display=swap"   rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+
     <link type="text/css" href="/assets/css/style.css" rel="stylesheet">
-    <link type="text/css" href="/assets/css/prism-xonokai.css" rel="stylesheet">
+    <link type="text/css" href="/assets/css/prism.css" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css">
 
 
@@ -60,11 +61,11 @@ title: Sam Roelants
       {% block navbar %}
       <nav>
         <ul>
-          <li {% if section == "about" %} class="active" {% endif %}>
-            <span><a href="/">About</a></span>
+          <li {% if section == "blog" %} class="active" {% endif %}>
+            <span><a href="/">Blog</a></span>
           </li>
-          <li {% if section == "thoughts" %} class="active" {% endif %}>
-            <span><a href="/thoughts/">Thoughts</a></span>
+          <li {% if section == "about" %} class="active" {% endif %}>
+            <span><a href="/about">About</a></span>
           </li>
           <li {% if section == "resume" %} class="active" {% endif %}>
             <span><a href="/resume/">Resume</a></span>
@@ -72,7 +73,9 @@ title: Sam Roelants
         </ul>
       </nav>
       {% endblock %}
-      {{ content | safe }}
+      <div class="main">
+        {{ content | safe }}
+      </div>
     </div>
   </body>
 </html>
