@@ -30,4 +30,4 @@ This is a blog post about setting up a blog using eleventy.'
 
 Inline mathematics seems to work pretty well: $E = mc^2$. I wonder how display
 mode maths looks. 
-$$ \oint_\gamma f(z)d\,z = 2\pi i\, \mathrm{Res}(\gamma)_{}$$
+$$ \oint_\gamma f(z)d\,z = 2\pi i\, \mathrm{Res}(\gamma)_{}$$.

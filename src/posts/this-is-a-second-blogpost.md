@@ -12,4 +12,5 @@ This is going to be an exact copy of the first paragraph, which
 feels extremely redundant.'
 
 This is a blog post about nothing, really.
+This is a blog post about nothing, really.
 
