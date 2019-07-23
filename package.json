@@ -1,5 +1,5 @@
 {
-  "name": "sroelants-blog",
+  "name": "sroelants.github.io",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -11,7 +11,8 @@
     "watch:sass": "onchange 'src/assets/sass/*.sass' -- npm run build:sass",
     "watch:eleventy": "npx @11ty/eleventy --watch",
     "build:all": "npm run build:sass && npm run build:eleventy",
-    "dev": "npm-run-all --parallel watch:* serve"
+    "dev": "npm-run-all --parallel watch:* serve",
+    "deploy": "gh-pages -d dist"
   },
   "keywords": [],
   "author": "Sam Roelants <roelants.sam@gmail.com> (http://sroelants.github.io/)",
