@@ -2,7 +2,6 @@
 section: blog
 title: Statically generated sites and the JAMstack
 author: Sam Roelants
-permalink: "{{title | slug }}/index.html"
 tags:
   - post
   - web
