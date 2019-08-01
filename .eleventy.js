@@ -1,4 +1,5 @@
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+const typesetPlugin = require("eleventy-plugin-typeset");
 const moment = require("moment");
 moment.locale("en");
 
@@ -8,6 +9,9 @@ module.exports = function(eleventyConfig) {
 
   /* Syntax Highlighting*/
   eleventyConfig.addPlugin(syntaxHighlight);
+
+  /* Advanced typesetting with Typeset.js */
+  eleventyConfig.addPlugin(typesetPlugin());
 
   /* Add KaTeX preprocessing to markdown-it */
   let markdownIt = require("markdown-it");
