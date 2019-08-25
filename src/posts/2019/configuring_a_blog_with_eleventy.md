@@ -2,7 +2,7 @@
 section: blog
 title: Configuring a blog with Eleventy
 author: Sam Roelants
-layout: mainlayout.njk
+layout: post.njk
 tags:
   - post
   - web
@@ -64,7 +64,6 @@ YAML-formatted front matter of the template:
 ```yaml
 ---
 section: blog
-layout: mainlayout.njk
 title: Configuring a blog with Eleventy
 author: Sam Roelants
 tags:
@@ -80,11 +79,12 @@ description: ""
 
 Of course, it would be horribly redundant to have to include all the layout 
 markup (ie, the html) in every single template file corresponding to a single
-post. This is where *layouts* really shine. Notice the `layout: mainlayout.njk`
-in the front matter we just saw. Eleventy allows you to create a generic page
+post. This is where *layouts* really shine. 
+Eleventy allows you to create a generic page
 with all the layout, and populate that with posts stored in template files.
 By default, all these layout files are stored in an `_includes/` folder along
-with the rest of your site's sources.
+with the rest of your site's sources. Getting a page to use a given layout is
+as simple as adding a `layout: mylayout.njk` to the front matter.
 
 
 ### File organization
