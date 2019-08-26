@@ -1,81 +1,41 @@
 ---
 title: Sam Roelants
 ---
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link type="text/css" href="https://fonts.googleapis.com/css?family=Rubik:400,500,700&display=swap"   rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link type="text/css" href="/assets/css/normalize.css" rel="stylesheet">
+  <link type="text/css" href="/assets/css/style.css" rel="stylesheet">
+  <link type="text/css" href="/assets/css/prism-xonokai.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Merriweather:700|Open+Sans:300,400&display=swap" rel="stylesheet">
 
-    <link type="text/css" href="/assets/css/style.css" rel="stylesheet">
-    <link type="text/css" href="/assets/css/prism.css" rel="stylesheet">
-    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css">
-
-
-    <title>{{ title }}</title>
-  </head>
+  <title>Sam Roelants</title>
+</head>
   <body>
     <div class="content">
-      {% block header %}
-      <header>
-        <div class="name">
-          <div id="sam">Sam</div>
-          <div id="roelants">Roelants</div>
-        </div>
-        <div class="contact">
-          <dl>
-            <div>
-              <dt><img src="/assets/img/envelope_icon.svg" class="glyph"></img></dt>
-              <dd class="address">165 Avenue Michel-Croz, 74400 Chamonix, France
-              </dd>
-            </div>
-            <div>
-              <dt><img src="/assets/img/at_icon.svg" class="glyph"></img></dt>
-              <dd class="email">
-                <a href="mailto: roelants.sam@gmail.com" target="_blank">
-                  roelants.sam@gmail.com
-                </a>
-              </dd>
-            </div>
-            <div>
-              <dt><img src="/assets/img/phone_icon.svg" class="glyph"></img></dt>
-              <dd class="phone">
-                <a href="tel:+33 656 704 307" target="_blank">+33 656 704 307
-                </a>
-              </dd>
-            </div>
-            <div>
-              <dt><img src="/assets/img/github_icon.svg" class="glyph"></img></dt>
-              <dd class="github">
-                <a href="http://www.github.com/sroelants" target="_blank">
-                  github.com/sroelants
-                </a>
-              </dd>
-            </div>
-          </ul>
-        </div>
-      </header>
-      {% endblock %}
-      {% block navbar %}
-      <nav>
-        <ul>
-          <li {% if section == "blog" %} class="active" {% endif %}>
-            <span><a href="/">Blog</a></span>
+    <div class="header">
+      <div class="header__name">
+        Sam Roelants
+      </div>
+      <div class="header__logo">
+      </div>
+      <nav class="header__nav">
+        <ul clas="header__nav_menu">
+          <li class="header__nav_menu__item">
+            <a href="#" class="header__nav_menu__anchor">Blog</a>
           </li>
-          <li {% if section == "about" %} class="active" {% endif %}>
-            <span><a href="/about">About</a></span>
+          <li class="header__nav_menu__item">
+            <a href="#" class="header__nav_menu__anchor">About</a>
           </li>
-          <li {% if section == "resume" %} class="active" {% endif %}>
-            <span><a href="/resume/">Resume</a></span>
+          <li class="header__nav_menu__item">
+            <a href="#" class="header__nav_menu__anchor">Resume</a>
           </li>
         </ul>
       </nav>
-      {% endblock %}
-      <div class="main">
-        {{ content | safe }}
-      </div>
+    </div>
+    <div class="main">
+      {{ content | safe }}
     </div>
   </body>
 </html>

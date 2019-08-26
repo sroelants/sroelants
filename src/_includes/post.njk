@@ -4,8 +4,8 @@ layout: mainlayout.njk
 <a href="/" class="back">← Back</a>
 <section id="post">
   <article>
-    <h1>{{ title }}</h1>
     {% metadata date, tags %}
+    <h1>{{ title }}</h1>
     {{ content | safe }}
   </article>
 </section>

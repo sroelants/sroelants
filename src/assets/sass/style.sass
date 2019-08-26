@@ -1,200 +1,97 @@
-/* Colours */
-$bg-white: #F9F9F9
-$fg-black: rgba(66, 66, 66, 1)
-$hl-blue: rgba(0, 158, 224, 1)
+$bg-white: #fbfbfb
+$bg-light-grey: #f8f8f8
+$bg-grey: #f2f2f2
+$fg-black: #333
+$fg-highlight: #16abff
 
-/* General page styling */
-html
-  overflow-y: scroll
 body
   background: $bg-white
   color: $fg-black
-  font-family: 'Open Sans', sans-serif
-  font-size: 16px
-
-p
-  text-align: justify
-h1, h2
-  font-family: 'Rubik', sans-serif
 
 
-/* Navbar styling */
-nav 
-  font-family: 'Rubik', sans-serif
-  font-size: 20px
-  font-weight: 400
-  padding-top: 10px
-  ul
-    padding: 0
-    display: flex
-    list-style: none
-    li
-      flex-grow: 1
-      display: inline-block
-      text-align: center
-      
-    li.active 
-      span
-        border-bottom: 3px solid $hl-blue
-
-/* Content styling */
-
-.content
-  width: 700px
-  margin: 0 auto 
-  padding: 50px 0 50px 0
-  overflow: hidden
-
-.main
-  font-size: 18px
+.header
+  text-align: right
+  box-sizing: border-box
+  width: 33vw
+  height: 100vh
+  position: fixed
+  clip-path: border-box
+  background: url("/assets/img/penrose2.svg")
+  background-size: 1200px
+  background-position: -180px -180px
+  background-color: $bg-grey
   padding-top: 30px
-  a
-    text-decoration: underline solid $hl-blue
-
-// code
-//   padding: 0.15em 0.2em 0.05em
-//   border-radius: .3em
-//   // border: 0.13em solid #7a6652
-//   // box-shadow: 1px 1px 0.3em -0.1em #000 inset
-//   tab-size: 2
-//   hyphens: none
-//   font-family: Menlo, Monaco, "Courier New", monospace
-//   font-size: 14px
-//   background: #2a2a2a
-//   color: #fff
-//   text-shadow: none
-
-h1
-  color: $fg-black
-  width: 100%
-  border-bottom: solid  $hl-blue 1px
-  font-size: 32px
-  font-weight: 400
-  margin-block-end: 0.4444em
-
-h2,
-  margin-top: 2em
-  margin-bottom: 1em
-  margin-block-end: 0.2em
-
-h3
-  margin-top: 3em
-  margin-bottom: 1em
-
-a
-  text-decoration: none
-  color: $fg-black
-
-
-a:hover
-  color: $hl-blue
-
-
-/* Header styling */
-
-header
-  display: flex
-  font-family: 'Rubik', sans-serif
-
-
-.name
-  font-size: 60px
-  color: $hl-blue
-  text-align: right
-  display: inline-block
-  font-weight: 500
-
-
-#roelants
-  margin-top: -0.3em
-
-
-.contact
-  margin-left: 20px
-  padding: 1em 0 0.5em 0
-
-
-dl
-  height: 100%
-  display: flex
-  flex-direction: column
-  justify-content: space-between
-  margin: 0
-
-
-dt
-  float: left
-  clear: left
-  color: $hl-blue
-  text-align: right
-
-
-dd
-  margin-inline-start: 1.5em
-
-
-.glyph
-  width: 1em
-
-
-section
-  margin:  0 0 50px 0
-
-
-.item
-  display: flex
-  margin-top: 20px
+  padding-left: 40px
+  padding-right: 40px
 
 
 .date
-  min-width: 150px
-  font-weight: bold
-  // font-family: 'Rubik', sans-serif
+  position: relative
+  font-size: 0.8em
+  color: $fg-highlight
+  bottom: -0.3em
 
 
-.title
-  font-weight: bold
-  // font-family: 'Rubik', sans-serif
+.header__logo
+  height: 80px
+  width: 80px
+  background-color: $bg-grey
+  background: url("/assets/img/penrose_small2.svg")
+  background-size: contain
+  display: inline-block
+  transform: translateY(25%)
+  display: none
 
-.description
-  padding-top: 10px
-  font-style: italic
+.header__name
+  /* padding-left: 20px
+  /* padding-right: 20px
+  font-family: 'Merriweather', serif
+  font-weight: 700
+  font-size: 3em
+  display: inline-block
 
+.header__nav
+  width: 100%
+  position: relative
+  top: 10%
+  text-align: right
+  letter-spacing: 0.15rem
 
-
-/* Skills styling */
-
-#skills > ul
+.header__nav_menu__item
+  font-family: 'Open Sans', sans-serif
+  font-size: 1.5em
+  font-weight: 300
+  line-height: 2em
   list-style: none
-  padding: 0px
-  margin: 0px
 
-
-#skills > ul > li
-  padding: 0px 0px 20px 0px
-
-.posted-date
-  margin-right: 1em
-  display: inline
-  time
-    margin: 0
-    padding: 0
-
-.tag 
-  color: #999
+.header__nav_menu__anchor
+  color: $fg-black
   text-decoration: none
-  margin-left: 0.2em
+  &:hover
+    color: $fg-highlight
+    margin-right: -2px
+    transition: all 0.1s linear
 
-.post-metadata
-  color: #999
-  font-size: 16px
-  a
-    text-decoration: none
+h1, h2, h3
+  margin-top: 0
+  margin-bottom: 1em
+  font-family: 'Merriweather', serif
+  text-align: justify
 
-#sam-photo
-  width: 250px
-  height: 250px
-  float: right
-  border-radius: 100%
-  shape-outside: circle(50%)
-  margin: 20px
+h1
+  font-size: 2em
+
+h2
+  margin-top: 1em
+
+.main
+  font-size: 1.1em
+  line-height: 1.6
+  text-align: justify
+  width: 35em
+  position: absolute
+  top: 50%
+  left: 33vw
+  font-weight: 300
+  padding-left: 50px
+  padding-bottom: 100px
