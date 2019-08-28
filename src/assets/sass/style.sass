@@ -24,12 +24,30 @@ body
   padding-left: 40px
   padding-right: 40px
 
-
 .date
   position: relative
-  font-size: 0.8em
+  font-size: 0.9em
   color: $fg-highlight
   bottom: -0.3em
+
+.tag
+  padding: 2px 5px
+  margin-left: 2px
+  margin-right: 2px
+  position: relative
+  bottom: -0.3em
+
+  color: darken($bg-white, 8%)
+  font-weight: 400
+  font-size: 0.9em
+  text-decoration: none
+
+  background-color: lighten($fg-black, 30%)
+  border-radius: 4px
+  &:hover
+    background-color: lighten($fg-black, 40%)
+    transition: all 0.1s linear
+    color: darken($bg-white, 8%)
 
 
 .header__logo
@@ -47,19 +65,19 @@ body
   /* padding-right: 20px
   font-family: 'Merriweather', serif
   font-weight: 700
-  font-size: 3em
+  font-size: 2em
   display: inline-block
 
 .header__nav
   width: 100%
   position: relative
-  top: 10%
+  top: 5%
   text-align: right
   letter-spacing: 0.15rem
 
 .header__nav_menu__item
   font-family: 'Open Sans', sans-serif
-  font-size: 1.5em
+  font-size: 1.3em
   font-weight: 300
   line-height: 2em
   list-style: none
@@ -69,20 +87,36 @@ body
   text-decoration: none
   &:hover
     color: $fg-highlight
-    margin-right: -2px
+    /* margin-right: -2px
     transition: all 0.1s linear
 
 h1, h2, h3
   margin-top: 0
   margin-bottom: 1em
   font-family: 'Merriweather', serif
-  text-align: justify
+
 
 h1
   font-size: 2em
 
 h2
+  font-size: 1.5em
+  margin-top: 1.5em
+
+h3
+  margin-top: 1.5em
+
+.preview__title
   margin-top: 1em
+  margin-bottom: 0em
+  font-family: 'Merriweather', serif
+  font-weight: 700
+  font-size: 2em
+  text-align: left
+  a
+    text-decoration: none
+
+
 
 .main
   font-size: 1.1em
@@ -95,3 +129,12 @@ h2
   font-weight: 300
   padding-left: 50px
   padding-bottom: 100px
+
+a
+  text-decoration-color: $fg-highlight
+  color: $fg-black
+  &:hover
+    text-decoration: none
+    color: $fg-highlight
+  /* &:visited
+  /*   text-decoration: 1px $fg-highlight
