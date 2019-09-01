@@ -26,7 +26,7 @@ section: blog
   <h1>Latest posts</h1>
   {% for post in collections.post | reverse %}
 <article>
-  <div class="preview__title">
+  <div class="post-title">
     <a href="{{ post.url | url }}">{{ post.data.title }}</a>
   </div>
 

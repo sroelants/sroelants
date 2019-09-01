@@ -11,21 +11,21 @@ filter:
 ---
 <h1>Tagged “{{ tag }}”</h1>
 
-<ul>
+<ul class="post-list">
 {% set taglist = collections[ tag ] %}
 {% for post in taglist | reverse %}
 <article>
-  <div class="preview__title">
-    <a href="{{ post.url | url }}">{{ post.data.title }}</a>
-  </div>
+<div class="post-title">
+  <a href="{{ post.url | url }}">{{ post.data.title }}</a>
+</div>
 
-  {% metadata post.date, post.data.tags %}
+{% metadata post.date, post.data.tags %}
 
 
-  <p>
-  {{ post.data.description }} 
+<p>
+{{ post.data.description }} 
 
-  <a href="{{ post.url | url }}">Read more →</a>
+<a href="{{ post.url | url }}">Read more →</a>
 
 
 </article>

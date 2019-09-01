@@ -9,7 +9,9 @@ tags:
   - reader
   - haskell
   - functional programming
-description: ""
+description: "The first installment in a series of posts discussing common
+monads as you might encounter them in functional languages like Scala and
+Haskell. Today, we're starting off with the Reader monad."
 ---
 
 # Introduction

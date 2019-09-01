@@ -3,8 +3,8 @@ layout: mainlayout.njk
 ---
 <section id="post">
   <article>
+    <div class="post-title">{{ title }}</div>
     {% metadata date, tags %}
-    <h1>{{ title }}</h1>
     {{ content | safe }}
   </article>
 </section>

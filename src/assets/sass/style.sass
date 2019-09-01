@@ -12,7 +12,7 @@ body
 .header
   text-align: right
   box-sizing: border-box
-  width: 33vw
+  width: 400px
   height: 100vh
   position: fixed
   clip-path: border-box
@@ -75,7 +75,9 @@ body
   text-align: right
   letter-spacing: 0.15rem
 
+
 .header__nav_menu__item
+  // margin: 0 20px
   font-family: 'Open Sans', sans-serif
   font-size: 1.3em
   font-weight: 300
@@ -94,6 +96,7 @@ h1, h2, h3
   margin-top: 0
   margin-bottom: 1em
   font-family: 'Merriweather', serif
+  text-align: left
 
 
 h1
@@ -106,7 +109,7 @@ h2
 h3
   margin-top: 1.5em
 
-.preview__title
+.post-title
   margin-top: 1em
   margin-bottom: 0em
   font-family: 'Merriweather', serif
@@ -125,8 +128,8 @@ h3
   width: 35em
   position: absolute
   top: 50%
-  left: 33vw
-  font-weight: 300
+  left: 400px 
+  font-weight: 400
   padding-left: 50px
   padding-bottom: 100px
 
@@ -138,3 +141,57 @@ a
     color: $fg-highlight
   /* &:visited
   /*   text-decoration: 1px $fg-highlight
+
+/* Resume styling */
+
+section
+  margin:  0 0 50px 0
+
+.post-list
+  padding-left: 0
+
+.item
+  display: flex
+  margin-top: 20px
+
+
+.activity_date
+  min-width: 150px
+  font-weight: bold
+  // font-family: 'Rubik', sans-serif
+
+
+.title
+  font-weight: bold
+  // font-family: 'Rubik', sans-serif
+
+.description
+  padding-top: 10px
+  font-style: italic
+
+
+#skills > ul
+  font-weight: 400
+  list-style: none
+  padding: 0px
+  margin: 0px
+
+
+#skills > ul > li
+  padding: 0px 0px 20px 0px
+
+.posted-date
+  margin-right: 1em
+  display: inline
+  time
+    margin: 0
+    padding: 0
+
+
+#sam-photo
+  width: 250px
+  height: 250px
+  float: right
+  border-radius: 100%
+  shape-outside: circle(50%)
+  margin: 20px
