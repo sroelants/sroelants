@@ -10,13 +10,10 @@ section: blog
   <div class="post-title">
     <a href="{{ post.url | url }}">{{ post.data.title }}</a>
   </div>
-
   {% metadata post.date, post.data.tags %}
-
   <p>
   {{ post.data.description }} 
   </p>
-
   <a href="{{ post.url | url }}">Read more →</a>
 </article>
   {% endfor %}

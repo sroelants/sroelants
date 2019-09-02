@@ -3,6 +3,7 @@ layout: mainlayout.njk
 title: Blog
 section: blog
 ---
+<!--
 <section id="blog">
   <p>
   Consider this a little space to put the
@@ -21,6 +22,8 @@ section: blog
   </p>
 </section>
 
+-->
+
 
 <section id="latest">
   <h1>Latest posts</h1>
@@ -35,7 +38,6 @@ section: blog
   <p>
   {{ post.data.description }} 
   </p>
-
   <a href="{{ post.url | url }}">Read more →</a>
 </article>
   {% endfor %}

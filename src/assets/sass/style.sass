@@ -8,61 +8,18 @@ body
   background: $bg-white
   color: $fg-black
 
-
-.header
+.sidebar 
+  border-right: 1px solid #eee
   text-align: right
-  box-sizing: border-box
   width: 400px
   height: 100vh
   position: fixed
-  clip-path: border-box
-  background: url("/assets/img/penrose2.svg")
-  background-size: 1200px
-  background-position: -180px -180px
-  background-color: $bg-grey
-  padding-top: 30px
-  padding-left: 40px
-  padding-right: 40px
+  padding-top: 40vh
 
-.date
-  position: relative
-  font-size: 0.9em
-  color: $fg-highlight
-  bottom: -0.3em
-
-.tag
-  padding: 2px 5px
-  margin-left: 2px
-  margin-right: 2px
-  position: relative
-  bottom: -0.3em
-
-  color: darken($bg-white, 8%)
-  font-weight: 400
-  font-size: 0.9em
-  text-decoration: none
-
-  background-color: lighten($fg-black, 30%)
-  border-radius: 4px
-  &:hover
-    background-color: lighten($fg-black, 40%)
-    transition: all 0.1s linear
-    color: darken($bg-white, 8%)
-
-
-.header__logo
-  height: 80px
-  width: 80px
-  background-color: $bg-grey
-  background: url("/assets/img/penrose_small2.svg")
-  background-size: contain
-  display: inline-block
-  transform: translateY(25%)
-  display: none
+.header
+  padding-right: 20px
 
 .header__name
-  /* padding-left: 20px
-  /* padding-right: 20px
   font-family: 'Merriweather', serif
   font-weight: 700
   font-size: 2em
@@ -70,27 +27,68 @@ body
 
 .header__nav
   width: 100%
-  position: relative
-  top: 5%
   text-align: right
   letter-spacing: 0.15rem
 
 
 .header__nav_menu__item
-  // margin: 0 20px
+  box-sizing: border-box
+  transform: translate(-2px)
   font-family: 'Open Sans', sans-serif
   font-size: 1.3em
   font-weight: 300
-  line-height: 2em
   list-style: none
-
-.header__nav_menu__anchor
-  color: $fg-black
-  text-decoration: none
+  margin: 0.25em 0
+  padding: 0.25em 0
   &:hover
     color: $fg-highlight
-    /* margin-right: -2px
     transition: all 0.1s linear
+    border-right: 4px solid $fg-black
+    margin-right: -4px
+  
+
+.header__nav_menu__item--active
+    border-right: 4px solid $fg-black
+    margin-right: -4px
+
+
+.header__nav_menu__anchor
+  padding-right: 40px
+  color: $fg-black
+  text-decoration: none
+
+
+.date
+  position: relative
+  font-size: 0.9em
+  color: $fg-highlight
+  bottom: -0.3em
+  text-align: left
+
+.tag
+  display: inline-block
+  padding: 2px 5px
+  margin-left: 2px
+  margin-right: 2px
+  position: relative
+  bottom: -0.3em
+
+  font-weight: 400
+  font-size: 0.9em
+
+  background-color: lighten($fg-black, 70%)
+  border-radius: 4px
+  &:hover
+    background-color: lighten($fg-black, 60%)
+    transition: all 0.1s linear
+    color: darken($bg-white, 8%)
+  a
+    color: lighten($fg-black, 10%)
+    text-decoration: none
+    &:hover
+      color: $fg-black
+
+
 
 h1, h2, h3
   margin-top: 0
@@ -127,11 +125,11 @@ h3
   text-align: justify
   width: 35em
   position: absolute
-  top: 50%
   left: 400px 
   font-weight: 400
   padding-left: 50px
   padding-bottom: 100px
+  padding-top: 40vh
 
 a
   text-decoration-color: $fg-highlight
@@ -181,6 +179,7 @@ section
   padding: 0px 0px 20px 0px
 
 .posted-date
+  text-align: left
   margin-right: 1em
   display: inline
   time
@@ -188,10 +187,13 @@ section
     padding: 0
 
 
+.post-metadata
+  text-align: left
+
 #sam-photo
   width: 250px
   height: 250px
   float: right
-  border-radius: 100%
-  shape-outside: circle(50%)
-  margin: 20px
+  // border-radius: 100%
+  // shape-outside: circle(50%)
+  margin: 30px

@@ -15,27 +15,28 @@ title: Sam Roelants
   <title>Sam Roelants</title>
 </head>
   <body>
-    <div class="content">
-    <div class="header">
+    <aside class="sidebar">
+      <header class="header">
       <div class="header__name">
         Sam Roelants
       </div>
       <div class="header__logo">
       </div>
+      </header>
       <nav class="header__nav">
         <ul class="header__nav_menu">
-          <li class="header__nav_menu__item">
+          <li class="header__nav_menu__item {% if section == "blog" %}header__nav_menu__item--active{% endif %}">
             <a href="/blog" class="header__nav_menu__anchor">Blog</a>
           </li>
-          <li class="header__nav_menu__item">
+          <li class="header__nav_menu__item {% if section == "about" %}header__nav_menu__item--active{% endif %}">
             <a href="/about" class="header__nav_menu__anchor">About</a>
           </li>
-          <li class="header__nav_menu__item">
+          <li class="header__nav_menu__item {% if section == "resume" %}header__nav_menu__item--active{% endif %}">
             <a href="/resume" class="header__nav_menu__anchor">Resume</a>
           </li>
         </ul>
       </nav>
-    </div>
+      </aside>
     <div class="main">
       {{ content | safe }}
     </div>

@@ -19,13 +19,14 @@ filter:
   <a href="{{ post.url | url }}">{{ post.data.title }}</a>
 </div>
 
-{% metadata post.date, post.tags %}
+{% metadata post.date, post.data.tags %}
 
 
 <p>
 {{ post.data.description }} 
 
 <a href="{{ post.url | url }}">Read more →</a>
+</p>
 
 
 </article>
