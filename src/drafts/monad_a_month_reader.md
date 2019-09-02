@@ -98,15 +98,31 @@ data to functions. In the next section, we'll try and implement this idea, and
 see if we can come up with the Reader monad.
 
 # Implementing dependency injection
-## A naive idea
-Suppose we've decided we want some function `fun :: a -> b` to actually change
-its behavior depending on what set of environment variables we choose (say in
-the form of a record, whose type we'll simply denote `e`). As a first stab at
-it, we could consider refactoring our function `fun` to take in a tuple of our
-input and the additional values, `fun :: (a, e) -> b`. That seems to work. It's
-a bit of a hack, but it solves the problem. In fact, it works so well, we might
-even refactor some more functions in our code base to take in the same
-environment variables. If we had another function `fun':: b -> c`, we'll
-refactor it to `fun' :: (b, e) -> c`.
+Suppose we have a function `f :: a -> b` that we want to refactor so that it 
+takes some extra dependencies that alter its behavior. We'll assume these
+dependencies have some generic type `e` for now, so the type signature of `f` 
+becomes `f::e -> a -> b` 
+Being an automatically curried language, Haskell gives us two interchangeable 
+ways of thinking of this: `f` is a function that takes some environment
+variables of type `e` and a value of type `a` and returns a type `b`, or it 
+simply takes an environment of type `e` and returns us our function `a -> b`
+with its behavior fixed by the environment. It's simply a closure encapsulating
+our environment variables. 
+
+Now, in a functional programming context where much 
+of our logic consists of long chains of composed function, this approach
+quickly becomes problematic. Suppose we have another function `g:: e -> b -> c`
+that also depends on the same environment, and we want to _compose_ `f` and
+`g`. We could curry `g` with the same environment, and compose `f` with the
+curried function `g e`:
+```haskell
+h :: e -> a -> c
+h = (g e) . f 
+```
+
+But this defeats the entire idea of the dependency injection we were trying
+to achieve! We're back to having to pass the environment manually to every piece
+of the computation along the way.
+
 
 
