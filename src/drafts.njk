@@ -7,16 +7,13 @@ section: blog
   <h1>Drafts</h1>
   {% for post in collections.draft | reverse %}
 <article>
-  <h2>
+  <div class="post-title">
     <a href="{{ post.url | url }}">{{ post.data.title }}</a>
-  </h2>
-
+  </div>
   {% metadata post.date, post.data.tags %}
-
   <p>
   {{ post.data.description }} 
   </p>
-
   <a href="{{ post.url | url }}">Read more →</a>
 </article>
   {% endfor %}

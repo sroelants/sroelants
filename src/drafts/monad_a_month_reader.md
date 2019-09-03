@@ -123,7 +123,3 @@ h = (g e) . f
 But this defeats the entire idea of the dependency injection we were trying
 to achieve! We're back to having to pass the environment manually to every piece
 of the computation along the way. 
-
-
-
-

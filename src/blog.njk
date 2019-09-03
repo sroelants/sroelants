@@ -3,6 +3,7 @@ layout: mainlayout.njk
 title: Blog
 section: blog
 ---
+<!--
 <section id="blog">
   <p>
   Consider this a little space to put the
@@ -21,21 +22,22 @@ section: blog
   </p>
 </section>
 
+-->
+
 
 <section id="latest">
   <h1>Latest posts</h1>
   {% for post in collections.post | reverse %}
 <article>
-  <h2>
+  <div class="post-title">
     <a href="{{ post.url | url }}">{{ post.data.title }}</a>
-  </h2>
+  </div>
 
   {% metadata post.date, post.data.tags %}
 
   <p>
   {{ post.data.description }} 
   </p>
-
   <a href="{{ post.url | url }}">Read more →</a>
 </article>
   {% endfor %}

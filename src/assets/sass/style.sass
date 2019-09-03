@@ -1,152 +1,159 @@
-/* Colours */
-$bg-white: #F9F9F9
-$fg-black: rgba(66, 66, 66, 1)
-$hl-blue: rgba(0, 158, 224, 1)
+$bg-white: #fbfbfb
+$bg-light-grey: #f8f8f8
+$bg-grey: #f2f2f2
+$fg-black: #333
+$fg-highlight: #16abff
 
-/* General page styling */
-html
-  overflow-y: scroll
 body
   background: $bg-white
   color: $fg-black
+
+.sidebar 
+  border-right: 1px solid #eee
+  text-align: right
+  width: 400px
+  height: 100vh
+  position: fixed
+  padding-top: 40vh
+
+.header
+  padding-right: 20px
+
+.header__name
+  font-family: 'Merriweather', serif
+  font-weight: 700
+  font-size: 2em
+  display: inline-block
+
+.header__nav
+  width: 100%
+  text-align: right
+  letter-spacing: 0.15rem
+
+
+.header__nav_menu__item
+  box-sizing: border-box
+  transform: translate(-2px)
   font-family: 'Open Sans', sans-serif
-  font-size: 16px
+  font-size: 1.3em
+  font-weight: 300
+  list-style: none
+  margin: 0.25em 0
+  padding: 0.25em 0
+  &:hover
+    color: $fg-highlight
+    transition: all 0.1s linear
+    border-right: 4px solid $fg-black
+    margin-right: -4px
+  
 
-p
-  text-align: justify
-h1, h2
-  font-family: 'Rubik', sans-serif
+.header__nav_menu__item--active
+    border-right: 4px solid $fg-black
+    margin-right: -4px
 
 
-/* Navbar styling */
-nav 
-  font-family: 'Rubik', sans-serif
-  font-size: 20px
+.header__nav_menu__anchor
+  padding-right: 40px
+  color: $fg-black
+  text-decoration: none
+
+
+.date
+  position: relative
+  font-size: 0.9em
+  color: $fg-highlight
+  bottom: -0.3em
+  text-align: left
+
+.tag
+  display: inline-block
+  padding: 2px 5px
+  margin-left: 2px
+  margin-right: 2px
+  position: relative
+  bottom: -0.3em
+
   font-weight: 400
-  padding-top: 10px
-  ul
-    padding: 0
-    display: flex
-    list-style: none
-    li
-      flex-grow: 1
-      display: inline-block
-      text-align: center
-      
-    li.active 
-      span
-        border-bottom: 3px solid $hl-blue
+  font-size: 0.9em
 
-/* Content styling */
-
-.content
-  width: 700px
-  margin: 0 auto 
-  padding: 50px 0 50px 0
-  overflow: hidden
-
-.main
-  font-size: 18px
-  padding-top: 30px
+  background-color: lighten($fg-black, 70%)
+  border-radius: 4px
+  &:hover
+    background-color: lighten($fg-black, 60%)
+    transition: all 0.1s linear
+    color: darken($bg-white, 8%)
   a
-    text-decoration: underline solid $hl-blue
+    color: lighten($fg-black, 10%)
+    text-decoration: none
+    &:hover
+      color: $fg-black
 
-// code
-//   padding: 0.15em 0.2em 0.05em
-//   border-radius: .3em
-//   // border: 0.13em solid #7a6652
-//   // box-shadow: 1px 1px 0.3em -0.1em #000 inset
-//   tab-size: 2
-//   hyphens: none
-//   font-family: Menlo, Monaco, "Courier New", monospace
-//   font-size: 14px
-//   background: #2a2a2a
-//   color: #fff
-//   text-shadow: none
+
+
+h1, h2, h3
+  margin-top: 0
+  margin-bottom: 1em
+  font-family: 'Merriweather', serif
+  text-align: left
+
 
 h1
-  color: $fg-black
-  width: 100%
-  border-bottom: solid  $hl-blue 1px
-  font-size: 32px
-  font-weight: 400
-  margin-block-end: 0.4444em
+  font-size: 2em
 
-h2,
-  margin-top: 2em
-  margin-bottom: 1em
-  margin-block-end: 0.2em
+h2
+  font-size: 1.5em
+  margin-top: 1.5em
 
 h3
-  margin-top: 3em
-  margin-bottom: 1em
+  margin-top: 1.5em
+
+.post-title
+  margin-top: 1em
+  margin-bottom: 0em
+  font-family: 'Merriweather', serif
+  font-weight: 700
+  font-size: 2em
+  text-align: left
+  a
+    text-decoration: none
+
+
+
+.main
+  font-size: 1.1em
+  line-height: 1.6
+  text-align: justify
+  width: 35em
+  position: absolute
+  left: 400px 
+  font-weight: 400
+  padding-left: 50px
+  padding-bottom: 100px
+  padding-top: 40vh
 
 a
-  text-decoration: none
+  text-decoration-color: $fg-highlight
   color: $fg-black
+  &:hover
+    text-decoration: none
+    color: $fg-highlight
+  /* &:visited
+  /*   text-decoration: 1px $fg-highlight
 
-
-a:hover
-  color: $hl-blue
-
-
-/* Header styling */
-
-header
-  display: flex
-  font-family: 'Rubik', sans-serif
-
-
-.name
-  font-size: 60px
-  color: $hl-blue
-  text-align: right
-  display: inline-block
-  font-weight: 500
-
-
-#roelants
-  margin-top: -0.3em
-
-
-.contact
-  margin-left: 20px
-  padding: 1em 0 0.5em 0
-
-
-dl
-  height: 100%
-  display: flex
-  flex-direction: column
-  justify-content: space-between
-  margin: 0
-
-
-dt
-  float: left
-  clear: left
-  color: $hl-blue
-  text-align: right
-
-
-dd
-  margin-inline-start: 1.5em
-
-
-.glyph
-  width: 1em
-
+/* Resume styling */
 
 section
   margin:  0 0 50px 0
 
+.post-list
+  padding-left: 0
 
 .item
   display: flex
   margin-top: 20px
 
 
-.date
+.activity_date
   min-width: 150px
   font-weight: bold
   // font-family: 'Rubik', sans-serif
@@ -161,10 +168,8 @@ section
   font-style: italic
 
 
-
-/* Skills styling */
-
 #skills > ul
+  font-weight: 400
   list-style: none
   padding: 0px
   margin: 0px
@@ -174,27 +179,21 @@ section
   padding: 0px 0px 20px 0px
 
 .posted-date
+  text-align: left
   margin-right: 1em
   display: inline
   time
     margin: 0
     padding: 0
 
-.tag 
-  color: #999
-  text-decoration: none
-  margin-left: 0.2em
 
 .post-metadata
-  color: #999
-  font-size: 16px
-  a
-    text-decoration: none
+  text-align: left
 
 #sam-photo
   width: 250px
   height: 250px
   float: right
-  border-radius: 100%
-  shape-outside: circle(50%)
-  margin: 20px
+  // border-radius: 100%
+  // shape-outside: circle(50%)
+  margin: 30px
