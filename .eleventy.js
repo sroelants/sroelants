@@ -6,7 +6,9 @@ moment.locale("en");
 
 module.exports = function(eleventyConfig) {
   /* Copy assets to dist folder */
-  eleventyConfig.addPassthroughCopy("src/_includes/assets/img");
+  eleventyConfig.addPassthroughCopy({
+    "src/_includes/assets/img": "assets/img"
+  });
 
   /* Syntax Highlighting*/
   eleventyConfig.addPlugin(syntaxHighlight);
