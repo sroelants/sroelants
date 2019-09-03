@@ -1,74 +1,102 @@
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const typesetPlugin = require("eleventy-plugin-typeset");
+const CleanCSS = require("clean-css");
 const moment = require("moment");
 moment.locale("en");
 
 module.exports = function(eleventyConfig) {
   /* Copy assets to dist folder */
-  eleventyConfig.addPassthroughCopy("src/assets/img");
+  eleventyConfig.addPassthroughCopy("src/_includes/assets/img");
 
   /* Syntax Highlighting*/
   eleventyConfig.addPlugin(syntaxHighlight);
 
   /* Advanced typesetting with Typeset.js */
-  // eleventyConfig.addPlugin(typesetPlugin());
+  let tsOptions = {
+    only: ".main"
+  };
+  eleventyConfig.addPlugin(typesetPlugin(tsOptions));
 
-    /* Add KaTeX preprocessing to markdown-it */
-    let markdownIt = require("markdown-it");
-    let markdownItKatex = require("markdown-it-katex");
-    let options = {
-        html: true,
-        breaks: false,
-        linkify: true
-    };
+  /* Add KaTeX preprocessing to markdown-it */
+  let markdownIt = require("markdown-it");
+  let markdownItKatex = require("markdown-it-katex");
+  let markdownFootnotes = require("markdown-it-footnote");
 
-    let markdownLib = markdownIt(options).use(markdownItKatex);
-    eleventyConfig.setLibrary("md", markdownLib);
+  let mdOptions = {
+    html: true,
+    breaks: false,
+    linkify: true
+  };
 
-    /* Convert date objects to readable strings */
-    eleventyConfig.addFilter("dateIso", date => {
-        return moment(date).toISOString();
-    });
+  let markdownLib = markdownIt(mdOptions)
+    .use(markdownItKatex)
+    .use(markdownFootnotes);
+  eleventyConfig.setLibrary("md", markdownLib);
 
-    eleventyConfig.addFilter("dateReadable", date => {
-        return moment(date).format("LL");
-    });
+  /* Convert date objects to readable strings */
+  eleventyConfig.addFilter("dateIso", date => {
+    return moment(date).toISOString();
+  });
 
-    /* Front matter excerpts (v0.8.4)*/
-    // eleventyConfig.setFrontMatterParsingOptions({
-    //   excerpt: true,
-    //   excerpt_separator: "---"
-    // });
-    //
+  eleventyConfig.addFilter("dateReadable", date => {
+    return moment(date).format("LL");
+  });
 
-    /* Post metadata (date, tags) shortcode */
-    eleventyConfig.addShortcode("metadata", function(date, tags=[]) {
-        let tagMarkup = "";
+  /* Minify css */
 
-        for (tag of tags) {
-            if (tag != "post") {
-                tagMarkup +=
-                    '<a href="/blog/tags/' + tag + '" class="tag">' + tag + "</a>";
-            }
-        }
+  eleventyConfig.addFilter("cssmin", function(code) {
+    return new CleanCSS({}).minify(code).styles;
+  });
 
-        return `
-      <span class="post-metadata">
+  /* Front matter excerpts (v0.8.4)*/
+  // eleventyConfig.setFrontMatterParsingOptions({
+  //   excerpt: true,
+  //   excerpt_separator: "---"
+  // });
+  //
+
+  /* Post metadata (date, tags) shortcode */
+  eleventyConfig.addShortcode("metadata", function(date, tags = []) {
+    let tagMarkup = "";
+
+    for (tag of tags) {
+      if (tag != "post") {
+        tagMarkup +=
+          '<div class="tag"><a href="/blog/tags/' +
+          tag +
+          '">' +
+          tag +
+          "</a></div>";
+      }
+    }
+
+    return `
+      <div class="post-metadata">
         <span class="date">
         <time datetime="${moment(date).toISOString()}">
           ${moment(date).format("LL")}
         </time>
         </span>
         ${tagMarkup}
-      </span>`;
-    });
+      </div>`;
+  });
 
-    return {
-        dir: {
-            input: "src",
-            output: "dist"
-        },
-        passthroughFileCopy: true,
-        markdownTemplateEngine: "njk"
+  const slugify = require("slugify");
+  eleventyConfig.addFilter("slug", input => {
+    const options = {
+      replacement: "-",
+      remove: /[&,+()$~%.'":*?<>{}]/g,
+      lower: true
     };
+    return slugify(input, options);
+  });
+
+  return {
+    dir: {
+      input: "src",
+      output: "dist"
+    },
+    passthroughFileCopy: true,
+    markdownTemplateEngine: "njk"
+  };
 };
