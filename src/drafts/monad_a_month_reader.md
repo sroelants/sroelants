@@ -101,7 +101,7 @@ see if we can come up with the Reader monad.
 Suppose we have a function `f :: a -> b` that we want to refactor so that it 
 takes some extra dependencies that alter its behavior. We'll assume these
 dependencies have some generic type `e` for now, so the type signature of `f` 
-becomes `f::e -> a -> b` 
+becomes `f :: e -> a -> b` 
 Being an automatically curried language, Haskell gives us two interchangeable 
 ways of thinking of this: `f` is a function that takes some environment
 variables of type `e` and a value of type `a` and returns a type `b`, or it 
@@ -111,7 +111,7 @@ our environment variables.
 
 Now, in a functional programming context where much 
 of our logic consists of long chains of composed function, this approach
-quickly becomes problematic. Suppose we have another function `g:: e -> b -> c`
+quickly becomes problematic. Suppose we have another function `g :: e -> b -> c`
 that also depends on the same environment, and we want to _compose_ `f` and
 `g`. We could curry `g` with the same environment, and compose `f` with the
 curried function `g e`:
@@ -122,7 +122,8 @@ h = (g e) . f
 
 But this defeats the entire idea of the dependency injection we were trying
 to achieve! We're back to having to pass the environment manually to every piece
-of the computation along the way.
+of the computation along the way. 
+
 
 
 
