@@ -24,7 +24,8 @@ module.exports = function(eleventyConfig) {
   let mdOptions = {
     html: true,
     breaks: false,
-    linkify: true
+    linkify: true,
+    typographer: true
   };
 
   let markdownLib = markdownIt(mdOptions)

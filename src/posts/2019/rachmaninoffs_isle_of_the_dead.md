@@ -22,8 +22,8 @@ piano concertos."
 <img src="/assets/img/2019/bocklin_color.jpg" alt="Isle of the
 Dead - Böcklin" class="post__image" title="Isle of the Dead - Böcklin"/>
 
-This piece, probably one of Rachmaninoff's darkest, is -- as it's called in the
-business -- a *_tone_* poem or symphonic poem. Tone poems aren't necessary based
+This piece, probably one of Rachmaninoff's darkest, is --- as it's called in the
+business --- a *_tone_* poem or symphonic poem. Tone poems aren't necessary based
 on poetry (this piece is about a painting, not a poem), but the idea is rather
 that the piece has a subject: a painting, scene, folk story, or an actual poem,
 that it tries to evoke or express in musical terms.  Contrast it to something
@@ -142,8 +142,8 @@ and the ominous brass, coming to a violent battle around 16:00. I'm not sure
 but those ever-present four notes of the dies irae. We slowly retreat and all we
 are left with is the lapping of the waves once again. As if to signify the end
 of the entire affair and the final victory of death over life, we are
-confronted, around 20:30, one last time, with the dies irae -- this time in
-full, not just those four notes -- in the cellos, descending into a slow,
+confronted, around 20:30, one last time, with the dies irae --- this time in
+full, not just those four notes --- in the cellos, descending into a slow,
 downward spiral. 
 
 ## Conclusion
