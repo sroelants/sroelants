@@ -3,6 +3,7 @@ section: blog
 title: "Listening to Rachmaninoff's Isle of the Dead"
 author: Sam Roelants
 layout: post.njk
+date: 2019-09-03
 tags:
   - post
   - Rachmaninoff

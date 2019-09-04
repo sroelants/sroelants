@@ -3,6 +3,7 @@ section: blog
 title: Configuring a blog with Eleventy
 author: Sam Roelants
 layout: post.njk
+date: 2019-07-16
 tags:
   - post
   - web

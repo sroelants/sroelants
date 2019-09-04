@@ -2,6 +2,7 @@
 section: blog
 title: Statically generated sites and the JAMstack
 author: Sam Roelants
+date: 2019-08-06
 tags:
   - post
   - web
