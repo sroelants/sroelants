@@ -6,7 +6,7 @@
   "scripts": {
     "clean": "rm -rf dist",
     "build:sass": "node-sass -o src/_includes/assets/css/ src/_includes/assets/sass/*.sass --output-style compressed",
-    "build:eleventy": "npx @11ty/eleventy",
+    "build:eleventy": "eleventy",
     "serve": "browser-sync start --server 'dist' --files 'dist/*.html, dist/assets/css/*.css, dist/assets/js/*.js'",
     "watch:sass": "onchange 'src/assets/sass/*.sass' -- npm run build:sass",
     "watch:eleventy": "npx @11ty/eleventy --watch",
