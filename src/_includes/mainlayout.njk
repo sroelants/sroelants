@@ -10,11 +10,19 @@ title: Sam Roelants
   <link type="text/css" href="/assets/css/normalize.css" rel="stylesheet">
   <link type="text/css" href="/assets/css/style.css" rel="stylesheet">
   <link type="text/css" href="/assets/css/prism-xonokai.css" rel="stylesheet">-->
-  <link href="https://fonts.googleapis.com/css?family=Merriweather:700|Open+Sans:300,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Merriweather:300,700|Open+Sans:300,400&display=swap" rel="stylesheet">
+  <!--
+  <link href="https://fonts.googleapis.com/css?family=Vollkorn&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=EB+Garamond&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Crimson+Pro&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Lora&display=swap" rel="stylesheet">
+  -->
+
   <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css">
   {% set css %}
     {% include "assets/css/style.css" %}
-    {% include "assets/css/prism-xonokai.css" %}
+    {% include "assets/css/prism.css" %}
   {% endset %}
 <style>{{ css | cssmin | safe }}</style>
 
@@ -47,5 +55,6 @@ title: Sam Roelants
     <div class="main">
       {{ content | safe }}
     </div>
+    <script src="/assets/js/index.js"></script>
   </body>
 </html>

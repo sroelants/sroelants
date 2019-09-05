@@ -10,6 +10,10 @@ module.exports = function(eleventyConfig) {
     "src/_includes/assets/img": "assets/img"
   });
 
+  eleventyConfig.addPassthroughCopy({
+    "src/_includes/assets/js": "assets/js"
+  });
+
   /* Syntax Highlighting*/
   eleventyConfig.addPlugin(syntaxHighlight);
 
@@ -49,13 +53,19 @@ module.exports = function(eleventyConfig) {
   });
 
   /* Front matter excerpts (v0.8.4)*/
-  // eleventyConfig.setFrontMatterParsingOptions({
-  //   excerpt: true,
-  //   excerpt_separator: "---"
-  // });
-  //
+  eleventyConfig.setFrontMatterParsingOptions({
+    excerpt: true,
+    excerpt_separator: "---"
+  });
 
-  /* Post metadata (date, tags) shortcode */
+  /* Sidenote shortcode */
+  eleventyConfig.addPairedShortcode("sidenote", function(content, id) {
+    return `<label for="sn-${id}" class="margin-toggle sidenote-number"></label>
+            <input type="checkbox" id="sn-${id}" class="margin-toggle"/>
+            <span class="sidenote"> ${content} </span>`;
+  });
+
+  /* Blog post metadata (date, tags) shortcode */
   eleventyConfig.addShortcode("metadata", function(date, tags = []) {
     let tagMarkup = "";
 
@@ -80,6 +90,8 @@ module.exports = function(eleventyConfig) {
         ${tagMarkup}
       </div>`;
   });
+
+  /* Safer slugify (allows apostrophes in titles, etc... */
 
   const slugify = require("slugify");
   eleventyConfig.addFilter("slug", input => {

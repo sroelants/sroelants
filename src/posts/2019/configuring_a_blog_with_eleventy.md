@@ -3,7 +3,7 @@ section: blog
 title: Configuring a blog with Eleventy
 author: Sam Roelants
 layout: post.njk
-date: 2019-07-16
+date: 2019-08-16
 tags:
   - post
   - web
@@ -112,15 +112,17 @@ name as the folder, eg. `posts.json` in the folder `posts`. All blog posts
 use the same layout-file, have the same url format and include the `post` tag
 so they can be collected later on. Instead of adding all these tags to the front
 matter of every template, I have the following file set up:
-```text
-(src/posts/posts.json:)
+```json
+{% raw %}
+// src/posts/posts.json:
 
 {
-  "permalink": "/blog/&lbrace;{ title | slug &rbrace;}/index.html",
+  "permalink": "/blog/{{title | slug }}/index.html",
   "layout": "post.njk"
   "tags": 
     - post
 }
+{% endraw %}
 ```
 
 ### Filters and shortcodes
@@ -217,7 +219,7 @@ It is far more lean and has an excellent server-side rendering API. What's more,
 because we have the entire NPM ecosystem at our service, adding KaTeX support
 was as simply as installing the KaTeX plugin for Markdown-it (the default
 markdown parser Eleventy uses).
-```js
+```javascript
   let markdownIt = require("markdown-it");
   let markdownItKatex = require("markdown-it-katex");
   let options = {

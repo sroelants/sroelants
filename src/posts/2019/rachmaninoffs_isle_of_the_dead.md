@@ -38,7 +38,7 @@ Europe that Nabokov was led to comment on its ubiquity:
 >which he began to examine with the same conscientious attention, although it
 >was but an ordinary print found in every Berlin home: “The Isle of the Dead.”
 >
-> &mdash; <cite> Vladimir Nabokov, Despair</cite>
+> --- <cite> Vladimir Nabokov, Despair</cite>
 
 Böcklin actually painted five versions of the same scene, my favorite one being
 the one at the top of this page. Another one only survives as a black and white
@@ -64,27 +64,41 @@ before actually fully understanding what's going on. Namely, the Dies Irae;
 you've probably heard of the name at one point or another. It's a medieval hymn
 from around the 13th century that is traditionally played during a Requiem mass.
 It's become a bit of a Romantic music trope to use the first phrase of the hymn
-as a formulaic way to evoke death.[^1] 
-
-<iframe width="640" height="360" src="https://www.youtube.com/embed/RMZPdSo2qUQ"
-frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope;
-picture-in-picture" allowfullscreen></iframe>
+as a formulaic way to evoke death.<label for="sn-berlioz"
+       class="margin-toggle sidenote-number">
+</label>
+<input type="checkbox"
+       id="sn-berlioz"
+       class="margin-toggle"/>
+<span class="sidenote"> 
+This tradition was started by Berlioz in his _Symphonie Fantastique_,
+another tone poem in which the composer imagines himself, driven to despair by
+an unrequited love, attempting suicide by consuming copious amounts of opium.
+This causes him to fall into a delirious halucination in which he is executed at
+the guillotine on charges of killing his love. He then witnesses a grotesque
+sabbath feast of witches and spirits, accompanied by the Dies Irae.
+</span>
 
 Rachmaninoff used it in countless pieces (what can I say, he was a gloomy guy),
 and, as you might have guessed, it's going to feature heavily in this piece. Of
 course, it wouldn't be any fun if he simply used the tune as is, so generally
 it's played around with, transformed, masked and varied. It's going to increase
-your enjoyment exponentially if you just take a second to listen to the hymn,
+your enjoyment exponentially if you
+just take a second to listen to the hymn,
 and try to hold that first phrase in your mind's ear (_Di-es ir-ae, di-es
 il-la_), in particular those first four notes will become a really important
 motif all throughout the piece. Hum those first four notes a few times.  I'm
 serious. Nice and slow: _Di-es ir-ae_.
+<iframe width="640" height="360" src="https://www.youtube.com/embed/RMZPdSo2qUQ"
+frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope;" 
+allowfullscreen></iframe>
 
 I personally really like motivic pieces like this (ie. a motif or theme gets
 reused and reworked throughout the entire piece) because it kind of trains your
 ears to hear and recognize and actively participate in listening to the music.
 It kinda feels like a treasure hunt, feeling kind of satisfying when you
-discover a new instance of the same old motif in some disguised way.  
+discover a new instance of the same old motif in some disguised 
+way.
 
 Okay, on to the actual music! 
 
@@ -93,8 +107,8 @@ Okay, on to the actual music!
 _Just for ease of reference, I'll be referring to
 timestamps that go with this particular recording that I happen to like._
 <iframe width="640" height="360" src="https://www.youtube.com/embed/dbbtmskCRUY"
-frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope;
-picture-in-picture" allowfullscreen></iframe>
+frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope;" 
+allowfullscreen></iframe>
 
 The piece starts with a very sombre, subdued theme in the basses. There is no
 real melody or harmonic movement. In my mind, we're amid a misty sea, with
@@ -151,10 +165,3 @@ downward spiral.
 There you have it. I hope that didn't put you in a gloomy mood. I hope I managed 
 to get across how much depth, nuance and variety Rachmaninoff manages to put
 into a piece that, on the face of it, is simply about gloomy death.
-
-[^1]: This tradition was started by Berlios in his _Symphonie Fantastique_,
-another tone poem in which the composer imagines himself, driven to despair from
-an unrequited love, attempting suicide by consuming copious amounts of opium.
-This causes him to fall into delirious halucinations in which he is executed at
-the guillotine on charges of killing his love. He then witnesses a grotesque
-sabbath feast of witches and spirits, accompanied by the Dies Irae.
