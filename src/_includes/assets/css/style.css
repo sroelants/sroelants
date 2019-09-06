@@ -185,11 +185,14 @@ body {
 /* ABOUT [ABOU] ***************************************************************/
 #sam-photo {
   width: 150px;
+  height: 150px;
   float: right;
   margin: 30px; }
 
-@media (min-width: 50rem) {
-  width: 250px; }
+@media (min-width: 40rem) {
+  #sam-photo {
+    width: 250px;
+    height: 250px; } }
 
 /* RESUME [RESU] **************************************************************/
 section {

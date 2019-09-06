@@ -14,6 +14,7 @@ $bodyfont: 'Open Sans', sans-serif
 // $bodyfont: 'Crimson Pro', serif
 // $bodyfont: 'Lora', serif
 
+$bp-xsmall: 40rem
 $bp-small: 50rem
 $bp-medium: 70rem
 $bp-large: 80rem
@@ -217,10 +218,15 @@ body
 /* ABOUT [ABOU] ***************************************************************/
 #sam-photo
   width: 150px
+  height: 150px
   float: right
   margin: 30px
-@media (min-width: $bp-small)
-  width: 250px
+
+@media (min-width: $bp-xsmall)
+  #sam-photo
+    width: 250px
+    height: 250px
+
 
 
 /* RESUME [RESU] **************************************************************/
