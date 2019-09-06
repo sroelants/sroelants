@@ -87,7 +87,7 @@ and try to hold that first phrase in your mind's ear (_Di-es ir-ae, di-es
 il-la_), in particular those first four notes will become a really important
 motif all throughout the piece. Hum those first four notes a few times.  I'm
 serious. Nice and slow: _Di-es ir-ae_.
-<iframe width="640" height="360" src="https://www.youtube.com/embed/RMZPdSo2qUQ"
+<iframe title="Dies irae" width="640" height="360" src="https://www.youtube.com/embed/RMZPdSo2qUQ"
 frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope;" 
 allowfullscreen></iframe>
 
@@ -104,7 +104,7 @@ Okay, on to the actual music!
 
 _Just for ease of reference, I'll be referring to
 timestamps that go with this particular recording that I happen to like._
-<iframe width="640" height="360" src="https://www.youtube.com/embed/dbbtmskCRUY"
+<iframe title="Isle of the Dead" width="640" height="360" src="https://www.youtube.com/embed/dbbtmskCRUY"
 frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope;" 
 allowfullscreen></iframe>
 
