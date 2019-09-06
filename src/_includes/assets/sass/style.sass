@@ -14,6 +14,7 @@ $bodyfont: 'Open Sans', sans-serif
 // $bodyfont: 'Crimson Pro', serif
 // $bodyfont: 'Lora', serif
 
+$bp-xsmall: 40rem
 $bp-small: 50rem
 $bp-medium: 70rem
 $bp-large: 80rem
@@ -25,13 +26,12 @@ html
   font-size: 15px
 
 .page
-  padding-top: 6rem
+  padding-top: 3rem
   display: grid
   max-width: 90vw
   margin: auto
-  grid-template-rows: 8rem auto 3rem auto
+  grid-template-rows: 5rem auto 3rem auto
   grid-template-areas:  "header" "main" "icons" "footer"
-
 
 @media (min-width: $bp-small)
   .page
@@ -61,8 +61,9 @@ body
 
 .header
   display: flex
-  justify-content: space-between
-  align-items: baseline
+  flex-direction: column
+  align-items: center
+  justify-content: center
   grid-area: header
 
 .header__name
@@ -70,6 +71,7 @@ body
   font-size: 2.2rem
   font-weight: 700
   margin-bottom: 0.5rem
+  margin-bottom: 0
 
 .header__nav
   font-family: $sansfont
@@ -93,6 +95,12 @@ body
 .header__nav__item--active
     padding-bottom: 4px
     border-bottom: 2px solid $fg-black
+
+@media (min-width: $bp-small)
+  .header
+    flex-direction: row
+    justify-content: space-between
+    align-items: baseline
 
 @media (min-width: $bp-medium ) and (orientation: landscape)
   .header
@@ -132,7 +140,6 @@ body
 /* MAIN [MAIN] ****************************************************************/
 
 .main
-  padding-top: 40vh
   grid-area: main
   max-width: 90vw
   font-size: 1.1rem
@@ -158,6 +165,7 @@ body
 
 @media (min-width: $bp-medium ) and (orientation: landscape)
   .main
+    padding-top: 40vh
     margin: 0 3rem
 
   .icons
@@ -184,6 +192,7 @@ body
 .post-metadata
   position: relative
   bottom: -0.3em
+  text-align: left
   font-size: 0.9em
 
 

@@ -5,11 +5,11 @@ html {
   font-size: 15px; }
 
 .page {
-  padding-top: 6rem;
+  padding-top: 3rem;
   display: grid;
   max-width: 90vw;
   margin: auto;
-  grid-template-rows: 8rem auto 3rem auto;
+  grid-template-rows: 5rem auto 3rem auto;
   grid-template-areas: "header" "main" "icons" "footer"; }
 
 @media (min-width: 50rem) {
@@ -39,15 +39,17 @@ body {
 /* HEADER [HEAD} **************************************************************/
 .header {
   display: flex;
-  justify-content: space-between;
-  align-items: baseline;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   grid-area: header; }
 
 .header__name {
   font-family: "Merriweather", serif;
   font-size: 2.2rem;
   font-weight: 700;
-  margin-bottom: 0.5rem; }
+  margin-bottom: 0.5rem;
+  margin-bottom: 0; }
 
 .header__nav {
   font-family: "Open Sans", sans-serif;
@@ -71,6 +73,12 @@ body {
 .header__nav__item--active {
   padding-bottom: 4px;
   border-bottom: 2px solid #333; }
+
+@media (min-width: 50rem) {
+  .header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline; } }
 
 @media (min-width: 70rem) and (orientation: landscape) {
   .header {
@@ -104,7 +112,6 @@ body {
 
 /* MAIN [MAIN] ****************************************************************/
 .main {
-  padding-top: 40vh;
   grid-area: main;
   max-width: 90vw;
   font-size: 1.1rem;
@@ -129,6 +136,7 @@ body {
 
 @media (min-width: 70rem) and (orientation: landscape) {
   .main {
+    padding-top: 40vh;
     margin: 0 3rem; }
   .icons {
     margin-right: 3rem;
@@ -153,6 +161,7 @@ body {
 .post-metadata {
   position: relative;
   bottom: -0.3em;
+  text-align: left;
   font-size: 0.9em; }
 
 .tag {
