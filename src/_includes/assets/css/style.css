@@ -16,19 +16,19 @@ html {
   .page {
     max-width: 45rem; } }
 
-@media (min-width: 60rem) and (orientation: landscape) {
+@media (min-width: 70rem) and (orientation: landscape) {
   .page {
     padding-top: 0;
     max-width: 100%;
     margin-left: 0;
     margin-right: auto;
-    grid-template-columns: calc(100vw / 3) auto;
+    grid-template-columns: calc(100vw / 3) auto auto;
     grid-template-rows: 98vh auto;
-    grid-template-areas: "header main " "icons main" ". main" ". footer"; } }
+    grid-template-areas: "header main ." "icons main ." ". main ." ". footer ."; } }
 
 @media (min-width: 80rem) and (orientation: landscape) {
   .page {
-    grid-template-columns: calc(80rem / 3) auto; } }
+    grid-template-columns: calc(80rem / 3) auto auto; } }
 
 body {
   background: #fbfbfb;
@@ -72,7 +72,7 @@ body {
   padding-bottom: 4px;
   border-bottom: 2px solid #333; }
 
-@media (min-width: 60rem) and (orientation: landscape) {
+@media (min-width: 70rem) and (orientation: landscape) {
   .header {
     width: calc(100vw / 3);
     max-width: calc(80rem/3);
@@ -120,21 +120,22 @@ body {
   grid-area: footer;
   text-align: center;
   font-size: 0.8rem;
-  margin-bottom: 1rem; }
+  margin-bottom: 1rem;
+  max-width: 40rem; }
 
 @media (min-width: 45rem) {
   .main {
     max-width: 40rem; } }
 
-@media (min-width: 60rem) and (orientation: landscape) {
+@media (min-width: 70rem) and (orientation: landscape) {
   .main {
     margin: 0 3rem; }
   .icons {
     margin-right: 3rem;
     text-align: right;
-    position: relative;
-    bottom: 1rem;
-    grid-area: icons; } }
+    grid-area: icons;
+    position: fixed;
+    bottom: 1rem; } }
 
 /* BLOG [BLOG] ****************************************************************/
 .post-title {
@@ -234,11 +235,12 @@ img {
 .social-icon {
   margin: 0.1rem;
   width: 25px;
-  opacity: 0.75; }
+  opacity: 0.5; }
   .social-icon:hover {
     opacity: 0.6; }
   .social-icon:active {
-    opacity: 0.9; }
+    opacity: 0.7;
+    transform: translateY(1px); }
 
 p {
   max-width: inherit; }
@@ -302,11 +304,17 @@ label.sidenote-number {
 label.margin-toggle:not(.sidenote-number) {
   display: none; }
 
-@media (max-width: 80rem) {
+@media (max-width: 85rem) {
   .sidenote {
     display: none; }
-  .sidenote-number {
-    font-weight: 700; }
+  .sidenote-number:after {
+    position: relative;
+    z-index: -10;
+    font-weight: 700;
+    background: #f2f2f2;
+    border-radius: 3px;
+    padding: 0 0.4em;
+    border: 1px solid #d9d9d9; }
   .margin-toggle:checked + .sidenote {
     display: block;
     float: left;
