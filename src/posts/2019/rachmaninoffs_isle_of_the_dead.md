@@ -20,7 +20,7 @@ piano concertos."
 ## Inspiration 
 ![Isle of the Dead](/assets/img/2019/bocklin_color.jpg "Isle of the Dead - Böcklin")
 
-This piece, probably one of Rachmaninoff's darkest, is --- as it's called in the
+This piece, probably one of Rachmaninoff's darkest, is -- as it's called in the
 business --- a *_tone_* poem or symphonic poem. Tone poems aren't necessary based
 on poetry (this piece is about a painting, not a poem), but the idea is rather
 that the piece has a subject: a painting, scene, folk story, or an actual poem,

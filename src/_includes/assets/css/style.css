@@ -115,7 +115,7 @@ body {
 .main {
   grid-area: main;
   max-width: 90vw;
-  font-size: 1.1rem;
+  font-size: 1rem;
   text-align: justify;
   line-height: 1.6;
   margin: auto; }
@@ -131,12 +131,13 @@ body {
   margin-bottom: 1rem;
   max-width: 40rem; }
 
-@media (min-width: 45rem) {
+@media (min-width: 40rem) {
   .main {
-    max-width: 40rem; } }
+    font-size: 1.1rem; } }
 
 @media (min-width: 70rem) and (orientation: landscape) {
   .main {
+    max-width: 40rem;
     padding-top: 40vh;
     margin: 0 3rem; }
   .icons {
@@ -187,13 +188,13 @@ body {
   width: 150px;
   height: 150px;
   float: right;
-  margin: 10px; }
+  margin: 20px 0 10px 10px; }
 
 @media (min-width: 40rem) {
   #sam-photo {
     width: 250px;
     height: 250px;
-    margin: 30px; } }
+    margin: 20px 0 20px 20px; } }
 
 /* RESUME [RESU] **************************************************************/
 section {
