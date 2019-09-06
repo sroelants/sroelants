@@ -152,10 +152,8 @@ body {
 
 .post-metadata {
   position: relative;
-  bottom: -0.3em; }
-
-.date {
-  color: #16abff; }
+  bottom: -0.3em;
+  font-size: 0.9em; }
 
 .tag {
   display: inline-block;
