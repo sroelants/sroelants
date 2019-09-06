@@ -14,7 +14,6 @@ $bodyfont: 'Open Sans', sans-serif
 // $bodyfont: 'Crimson Pro', serif
 // $bodyfont: 'Lora', serif
 
-$bp-xsmall: 40rem
 $bp-small: 50rem
 $bp-medium: 70rem
 $bp-large: 80rem
@@ -65,6 +64,7 @@ body
   align-items: center
   justify-content: center
   grid-area: header
+  margin-bottom: 2rem
 
 .header__name
   font-family: $titlefont
@@ -216,10 +216,11 @@ body
 
 /* ABOUT [ABOU] ***************************************************************/
 #sam-photo
-  width: 250px
-  height: 250px
+  width: 150px
   float: right
   margin: 30px
+@media (min-width: $bp-small)
+  width: 250px
 
 
 /* RESUME [RESU] **************************************************************/
@@ -317,7 +318,6 @@ iframe
 .sidenote-number 
   margin-left: -0.3em
   counter-increment: sidenote-counter 
-  color: $fg-highlight
 
 .sidenote-number:after,
 .sidenote:before 
@@ -331,7 +331,6 @@ iframe
   left: 0.1em 
 
 .sidenote:before 
-  color: $fg-highlight
   content: counter(sidenote-counter) 
   font-size: 0.7em
   top: -0.5em 
