@@ -18,9 +18,7 @@ piano concertos."
 ---
 
 ## Inspiration 
-
-<img src="/assets/img/2019/bocklin_color.jpg" alt="Isle of the
-Dead - Böcklin" class="post__image" title="Isle of the Dead - Böcklin"/>
+![Isle of the Dead](/assets/img/2019/bocklin_color.jpg "Isle of the Dead - Böcklin")
 
 This piece, probably one of Rachmaninoff's darkest, is --- as it's called in the
 business --- a *_tone_* poem or symphonic poem. Tone poems aren't necessary based
