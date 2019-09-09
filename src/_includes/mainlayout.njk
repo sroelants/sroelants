@@ -5,10 +5,11 @@ title: Sam Roelants
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="Description" content="The personal blog of Sam Roelants.">
+  <meta name="description" content="The personal blog of Sam Roelants.">
+  <meta name="author" content="Sam Roelants">
   <link rel="icon" type="image/x-icon" href="/assets/img/favicon.ico">
+  <meta name="theme-color" content="#FAFAFA" />
   <meta name=viewport content="width=device-width, initial-scale=1">
-
   <!--
   <link type="text/css" href="/assets/css/normalize.css" rel="stylesheet">
   <link type="text/css" href="/assets/css/style.css" rel="stylesheet">
@@ -24,8 +25,8 @@ title: Sam Roelants
 
   <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css">
   {% set css %}
-    {% include "assets/css/style.css" %}
     {% include "assets/css/prism.css" %}
+    {% include "assets/css/style.css" %}
   {% endset %}
 <style>{{ css | cssmin | safe }}</style>
 
