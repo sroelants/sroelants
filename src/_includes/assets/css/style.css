@@ -250,7 +250,8 @@ img {
 .social-icon {
   margin: 0.1rem;
   width: 25px;
-  opacity: 0.5; }
+  opacity: 0.3;
+  transition: all 0.1s linear; }
   .social-icon:hover {
     opacity: 0.6; }
   .social-icon:active {
@@ -274,6 +275,12 @@ iframe {
 @media (min-width: 45rem) {
   iframe {
     max-width: 40rem; } }
+
+p > code {
+  background-color: #f2f2f2;
+  border: 1px solid #d9d9d9;
+  border-radius: 5px;
+  padding: 2px 3px; }
 
 /* SIDENOTES [SIDE] ***********************************************************/
 .sidenote {

@@ -197,7 +197,6 @@ body
   text-align: left
   font-size: 0.9em
 
-
 .tag
   display: inline-block
   padding: 2px 5px
@@ -230,7 +229,6 @@ body
     margin: 20px 0 20px 20px
 
 
-
 /* RESUME [RESU] **************************************************************/
 section
   margin:  0 0 50px 0
@@ -241,7 +239,6 @@ section
 .item
   display: flex
   margin-top: 20px
-
 
 .activity_date
   min-width: 150px
@@ -286,7 +283,8 @@ img
 .social-icon
   margin: 0.1rem
   width: 25px
-  opacity: 0.5
+  opacity: 0.3
+  transition: all 0.1s linear
   &:hover
     opacity: 0.6
   &:active
@@ -309,6 +307,13 @@ iframe
 @media (min-width: 45rem)
   iframe
     max-width: 40rem
+
+p > code
+  background-color: $bg-grey
+  border: 1px solid darken($bg-grey, 10%)
+  border-radius: 5px
+  padding: 2px 3px
+
 
 /* SIDENOTES [SIDE] ***********************************************************/
 .sidenote
@@ -377,4 +382,3 @@ label.margin-toggle:not(.sidenote-number)
   
   label 
     cursor: pointer 
-
