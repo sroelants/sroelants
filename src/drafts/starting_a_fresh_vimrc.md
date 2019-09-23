@@ -161,11 +161,11 @@ noremap L $
 Ah, the truly controversial one. Most seasoned vim-users will recommend
 newcomers to vim to disable the arrow keys. This forces them to spend most of
 their time in 'normal' mode and use the (far more ergonomic) `hjkl` navigation
-keys. It's usually called *"hard mode"*. {% footnote %} There are levels of zeal
+keys. It's usually called *"hard mode"*. {% sidenote %} There are levels of zeal
 when it comes to "hard mode". Disabling the arrow keys is only the beginning.
 Some pros advocate disabling the ability to use any vim motion for more than
 once or twice in a row. This forces you to learn to use vim's powerful motions
-as efficiently as possible. {% endfootnote %} I don't feel like I really need
+as efficiently as possible. {% endsidenote %} I don't feel like I really need
 this to be enforced anymore, but it's just such a big part of the vim spirit,
 that I decided to leave them in. Another setting of note is the remapping of `j`
 and `k` to `gj` and `gk` respectively. Rather than moving down by a file line
@@ -195,11 +195,11 @@ Vim by default uses the Escape key to exit insert mode. This is an ergonomic
 disaster, and most people tend to remap the (rather useless) Caps Lock key to
 serve as an additional Escape key. Others simply remap some unlikely combination
 of letters to exit insert mode (in this case, `jj`). Having double space mapped
-to save the current file is also insanely quick. {% footnote %} Another benefit
+to save the current file is also insanely quick. {% sidenote %} Another benefit
 of the double space key binding is that, when I do have to use another text
 editor, I no longer litter the entire file with `:w`'s. I've finally lost the
 muscle memory, and inserting a double space here and there is far less offensive
-{% endfootnote %}
+{% endsidenote %}
 
 ## Plugins
 *Ah, the plugins*. This is where vim goes from being an immensely powerful text
