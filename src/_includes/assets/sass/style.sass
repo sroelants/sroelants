@@ -406,8 +406,8 @@ label.margin-toggle:not(.sidenote-number)
   display: none
 
 .light-toggle
-  position: fixed
-  bottom: 10px
+  position: absolute
+  top: 10px
   right: 10px
   width: 65px
   height: 30px
@@ -451,5 +451,9 @@ label.margin-toggle:not(.sidenote-number)
   .light-toggle__icon
     content: url("/assets/img/icons/moon.svg")
 
-
-
+@media (min-width: $bp-large ) 
+  .light-toggle
+    position: fixed
+    top: unset
+    bottom: 10px
+    right: 10px

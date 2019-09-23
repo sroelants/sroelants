@@ -368,8 +368,8 @@ label.margin-toggle:not(.sidenote-number) {
   display: none; }
 
 .light-toggle {
-  position: fixed;
-  bottom: 10px;
+  position: absolute;
+  top: 10px;
   right: 10px;
   width: 65px;
   height: 30px;
@@ -390,6 +390,7 @@ label.margin-toggle:not(.sidenote-number) {
   height: 26px;
   border-radius: 100px;
   z-index: 10;
+  transition: all 0.1s ease-in-out;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -411,3 +412,10 @@ label.margin-toggle:not(.sidenote-number) {
   margin-left: 30px; }
   #lightmode:checked ~ .light-toggle > .light-toggle__button .light-toggle__icon {
     content: url("/assets/img/icons/moon.svg"); }
+
+@media (min-width: 80rem) {
+  .light-toggle {
+    position: fixed;
+    top: unset;
+    bottom: 10px;
+    right: 10px; } }
