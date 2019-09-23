@@ -10,20 +10,14 @@ title: Sam Roelants
   <link rel="icon" type="image/x-icon" href="/assets/img/favicon.ico">
   <meta name="theme-color" content="#FAFAFA" />
   <meta name=viewport content="width=device-width, initial-scale=1">
-  <!--
-  <link type="text/css" href="/assets/css/normalize.css" rel="stylesheet">
-  <link type="text/css" href="/assets/css/style.css" rel="stylesheet">
-  <link type="text/css" href="/assets/css/prism-xonokai.css" rel="stylesheet">-->
   <link href="https://fonts.googleapis.com/css?family=Merriweather:300,700|Open+Sans:300,400&display=swap" rel="stylesheet">
-  <!--
-  <link href="https://fonts.googleapis.com/css?family=Vollkorn&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=EB+Garamond&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Crimson+Pro&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Lora&display=swap" rel="stylesheet">
-  -->
 
   <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css">
+  <script type="text/javascript">
+    if (localStorage.theme === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
+   }
+  </script>
   {% set css %}
     {% include "assets/css/prism.css" %}
     {% include "assets/css/style.css" %}
@@ -82,7 +76,19 @@ title: Sam Roelants
           <img src="/assets/img/icons/mail.svg" class="social-icon"
         alt="mail"/></a>
     </div>
-    <div class="footer">© 2019 Sam Roelants, All rights reserved.</footer>
+    <footer class="footer">© 2019 Sam Roelants, All rights reserved.</footer>
 
+    
+    <div>
+      <input type="checkbox" id="lightmode" name="light mode">
+      <label for="lightmode" class="light-toggle">
+          <img src="/assets/img/icons/sun_black.svg" class="light-toggle__icon--muted" />
+          <img src="/assets/img/icons/moon.svg" class="light-toggle__icon--muted" />
+        <div class="light-toggle__button">
+          <img class="light-toggle__icon" />
+        </div>
+      </label>
+    </div>
+    <script src="/assets/js/toggle.js"></script>
   </body>
 </html>
