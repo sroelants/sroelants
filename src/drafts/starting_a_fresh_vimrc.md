@@ -82,7 +82,9 @@ comments documenting what they do when it's not obvious. If you don't get what
 A couple of things to point out. `set number relativenumber` is *amazing*. Given
 how jumping around in a file by using keyboard commands is 90% of most people's
 work flow, it's a miracle it took so long for this to become a thing. It looks
-like this: ![Vim's hybrid line numbers]()
+like this: 
+
+![Vim's hybrid line numbers](/assets/img/2019/hybrid_linenumbers.webp)
 So, vim is a modal editor. It's claim to fame comes down to the fact that you
 can do *anything* without ever leaving the keyboard. Delete the next three
 words? `d3w`. Delete an expression inside parentheses and drop into insert mode?
@@ -138,7 +140,9 @@ set termguicolors
 I tend to prefer the more powerful Perl-like regexes over vim's. `set
 colorcolumn=80` draws a dark band on column 80, indicating where I should start
 a new line. I tend to be a bit capricious when it comes to color schemes, but
-for the moment I seem to be pretty happy with [jellybeans](https://github.com/nanotech/jellybeans.vim).  ![Jellybeans color scheme in vim]()
+for the moment I seem to be pretty happy with [jellybeans](https://github.com/nanotech/jellybeans.vim).  
+
+![Jellybeans color scheme in vim](/assets/img/2019/jellybeans.webp)
 
 ### Navigation
 ``` vim
@@ -211,23 +215,30 @@ community standard for plugin management.
 
 ### General purpose plugins
 ```vim
-Plug 'scrooloose/nerdtree'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-commentary'
-Plug 'junegunn/fzf'
+Plug 'scrooloose/nerdtree'        "Tree view project navigator
+Plug 'tpope/vim-fugitive'         "Git wrapper
+Plug 'tpope/vim-surround'         "Bindings for surrounding things with things
+Plug 'tpope/vim-commentary'       "Easy commenting
+Plug 'junegunn/fzf'               "Fuzzy finder 
 Plug 'junegunn/fzf.vim'
-Plug 'easymotion/vim-easymotion'
-Plug 'tpope/vim-eunuch'
-Plug 'raimondi/delimitmate'
-Plug 'bling/vim-bufferline'
+Plug 'easymotion/vim-easymotion'  "Quick jump to distant text objects.
+Plug 'tpope/vim-eunuch'           "FS commands in buffer
+Plug 'raimondi/delimitmate'       "Auto closing brackets/quotes
+Plug 'bling/vim-bufferline'       "Display open buffers in command line
+
+Plug 'w0rp/ale'                   "Linting
+Plug 'scrooloose/syntastic'       "Syntax highlighting
+Plug 'shougo/deoplete.nvim'       "Autocomplete
 ```
 
-![NERDTree]()
 [**NERDTree**](https://github.com/scrooloose/nerdtree) is probably one of the
 oldest vim plugins out there, if not as old as vim itself. It's a simple plugin
 that gives you an on-command side-pane tree navigator of the project you're
-working on. It's a pretty standard feature in any IDE.  I simply have it set to
+working on. It's a pretty standard feature in any IDE.  
+
+![NERDTree](/assets/img/2019/nerdtree.webp)
+
+I simply have it set to
 my F1 key to quickly open and close it when needed. 
 ``` vim
 map <F1> :NERDTreeToggle<CR>
@@ -284,6 +295,38 @@ when I've forgotten whether I have a file open or not. {% sidenote %} Fzf, being
 a fairly recent addition to my plugin list, really helps in that respect as
 well, allowing me to blindly type fragments of the buffer I want to edit, and
 fzf opens the buffer straight away. {% endsidenote %}
+
+The last couple of plugins are concerned with code quality and ergonomics. It's
+hard to imagine writing any code these days without a linter backing you up.
+[**ALE**](https://github.com/w0rp/ale) (short for *Asynchronous Linting Engine*)
+makes use of Neovim's (and, since v8.0, regular vim's) asynchronous capabilities
+for high speed linting. I have it set up for javascript and python, mostly.
+```vim
+" ALE
+let g:ale_linters = {
+\   'javascript': ['eslint'],
+\   'typescript': ['tsserver', 'tslint'],
+\   'python': ['pep8']
+\}
+
+let g:ale_fixers = {
+\    'javascript': ['eslint'],
+\    'typescript': ['prettier', 'tslint'],
+\    'sass': ['prettier'],
+\    'html': ['prettier']
+\}
+let g:ale_fix_on_save = 1
+```
+
+Syntax highlighting, another indispensible feature, is provided by
+[**Syntastic**](https://github.com/scrooloose/syntastic) and autocomplete is
+done by [**Deoplete**](https://github.com/Shougo/deoplete.nvim). Deoplete
+employs the semantics from other language-specific plugins, and comes with
+a *ton* of additional completion sources. {% sidenote %} Including a plugin to
+hook it into [TabNine](https://tabnine.com), an ML model that's trained by going over your code and
+giving you intelligent completion beyond what any semantic autocompleter could
+do. I'm really curious to try it out. {% endsidenote %}
+
 
 ### Language specific plugins
 These are fairly constant: I want syntax highlighting, linting and sane
@@ -353,3 +396,121 @@ lookup and namespace navigation, much like you would do in any other
 REPL-integrated IDE. So far, I've found it a dream to use, and haven't missed
 the emacs REPL at all.
 
+[**Parinfer**](https://shaunlebron.github.io/parinfer/) is another
+love-it-or-hate-it way of editing clojure. It takes care of (virtually) all of
+the parenthesis bookkeeping for you, and infers the correct balance by using
+python-like *sensitive whitespace*. Seeing as how opinions have always been
+divided about Python's use of sensitive whitespace, I expected no less
+controversy in clojure land. 
+
+![Parinfer](/assets/img/2019/parinfer.gif)
+
+Some claim it's like programming with training
+wheels or crutches. I don't care. Parinfer makes me fast, and saves me a *lot*
+of squinting at parentheses. It worked a lot better for me than
+[paredit](https://github.com/vim-scripts/paredit.vim), which has a tendency to
+trap me in a corner, having to jump through hoops to delete a paren it thinks
+I shouldn't delete.  There are a couple of parinfer plugins for vim, off varying
+quality. I use the [blazing fast plugin written in
+rust](https://github.com/eraserhd/parinfer-rust).
+
+
+The next two plugins that are used in tandem are
+[**vim-sexp**](https://github.com/guns/vim-sexp) and 
+[**tpope's custom mappings**](https://github.com/tpope/vim-sexp-mappings-for-regular-people). It allows
+you to efficiently manipulate s-expressions (think slurping and barfing) using
+vim motions and commands. In an expression like `(* (+ 1 2) 3 4)`, you can slurp
+the 3 into the sum form by moving the cursor onto the closing paren and
+typing `>)`, that is, move the paren left. The plugins also expose a couple of
+handy text objects for navigating clojure code (like 'inner' and 'outer forms')
+which, combined with vim-fireplace, make it really easy to send specific forms
+to the repl for evaluation.
+
+
+### Look and feel
+Some people find theming an unnecessary and frivolous thing. I'm not one of
+them. I spend a lot of time staring at my editor, I want it to look its best.
+Also, change being the spice of life, this section is definitely the most
+susceptible to change. Every now and then, when I'm feeling particularly
+procrastinatory, I like to mess around with different looks.
+
+```vim
+Plug 'flazz/vim-colorschemes'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'junegunn/rainbow_parentheses.vim'
+Plug 'Yggdroot/indentLine'
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
+```
+
+[**vim-colorschemes**](https://github.com/flazz-vim-colorschemes) is a handy
+collection of *a lot* of vim color schemes. *Who would've guessed?* As stated
+above, I've currently settled on 'jellybeans', it's been treating me (and my
+eyes) well. 
+
+I used to be a fan of [**powerline**](https://github.com/powerline/powerline),
+but I got tired of its bloat and sluggishness.
+[**vim-airline**](https://github.com/vim-airline/vim-airline) is a powerline
+clone written entirely in vimscript, making it feel much snappier. It comes with
+a massive pack of themes (I'm particularly fond of 'bubblegum'). It's remarkably
+customizable but, on the whole, I like the default setup just fine. The only
+feature I added was the tab line at the top of the screen.
+```vim
+" Airline
+let g:airline_theme = 'bubblegum'
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
+```
+
+[**Indentline**](https://github.com/Yggdroot/indentLine) adds basic indent
+guides, which is a pretty standard feature you can't really go without these
+days.
+[**Rainbow-parentheses**](https://github.com/junegunn/rainbow-parentheses.vim)
+is a modest tweak, but it pays in dividends. All paired up brackets get their
+own color, making it really easy to parse a chain of parentheses to get
+a feeling for the scope of certain expressions. This is particularly handy when
+I'm writing clojure and parinfer still has me guessing at how expressions should
+be nested exactly. In fact, I have it set up to be turned on by default whenever
+I'm writing lisp-like code.
+```vim
+augroup rainbow_lisp
+  autocmd!
+  autocmd FileType lisp,clojure,scheme RainbowParentheses
+augroup END
+```
+
+I do all of my writing in vim as well (mostly in markdown files). I'm a big fan
+of distraction free writing, like you'd find in
+[WriteMonkey](https://writemonkey.com) or [OmmWriter](https://ommwriter.com).
+When I'm writing plain text, I'm not interested in line numbers, other tabs or
+stats in vim-airline. I've found that
+[**Goyo**](https://github.com/junegunn/goyo.vim) combined with
+[**limelight**](https://github.com/junegunn/limelight.vim) gives me a really
+nice experience.
+
+![Goyo + Limelight](/assets/img/2019/limelight.gif)
+
+Limelight takes distraction-free writing one step further by
+fading out all but the paragraph you're currently working on. I have it
+activated by default when I turn on Goyo:
+```vim
+" Goyo + Limelight
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
+nmap <Leader>l <Plug>(Limelight)
+xmap <Leader>l <Plug>(Limelight)
+```
+
+
+## Conclusion
+Phew. I hope that wasn't too dry of a sum up of settings and plugins. In the
+end, reassembling my `.vimrc` to a point I was happy with it wasn't nearly as
+hard or painstaking as I thought it would be. (It probably took me longer to
+write up this post.) Next up, I'll have to set up a more streamlined way of
+version controlling my config files, so I can avoid this kind of catastrophe in
+the future. I hope it was of some use to anyone reading this as well. 
+
+Keep on vimming!
