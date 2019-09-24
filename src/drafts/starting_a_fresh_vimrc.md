@@ -203,4 +203,153 @@ muscle memory, and inserting a double space here and there is far less offensive
 
 ## Plugins
 *Ah, the plugins*. This is where vim goes from being an immensely powerful text
-editor to being an immensely powerful *IDE*.
+editor to being an immensely powerful *IDE*. I divided up the plugins I use into
+three categories: General purpose functionality, language specific plugins, and
+theming. Throughout the years, I've gone from managing my bundles using
+Pathogen, to Vundle, and have now settled on Plug. It's cleary becoming the
+community standard for plugin management.
+
+### General purpose plugins
+```vim
+Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
+Plug 'easymotion/vim-easymotion'
+Plug 'tpope/vim-eunuch'
+Plug 'raimondi/delimitmate'
+Plug 'bling/vim-bufferline'
+```
+
+![NERDTree]()
+[**NERDTree**](https://github.com/scrooloose/nerdtree) is probably one of the
+oldest vim plugins out there, if not as old as vim itself. It's a simple plugin
+that gives you an on-command side-pane tree navigator of the project you're
+working on. It's a pretty standard feature in any IDE.  I simply have it set to
+my F1 key to quickly open and close it when needed. 
+``` vim
+map <F1> :NERDTreeToggle<CR>
+```
+
+
+[**Fugitive**](https://github.com/tpope/vim-fugitive) is by far the most
+effective git workflow I've ever used. It allows you to perform all the basic
+git commands from within vim, but, more importantly, it gives you an increadibly
+powerful way of vimdiffing changed files with the git index. That's right,
+instead of having to interrupt my flow every other minute to make small
+incremental commits, I can just keep hacking away, and after a while simply
+selectively diff my file against the index and commit chunks of functionality in
+separate atomic commits. Fugitive is just one of many incredible contributions
+to the vim community by the Godfather Tim Pope himself.
+
+Continuing with contributions by Tim Pope,
+[**vim-surround**](https://github.com/tpope/vim-surround) is another one of
+those killer features it makes you wonder how it's not part of the vim core yet.
+Vim-surround expands the vim vocabulary by letting you *change* (`cs`), *add*
+(`ys`) and *delete* (`ds`) surrounding parentheses, brackets, quotes, HTML tags,
+*you name it*. Changing surrounding double quotes to single quotes becomes Hello
+`cs"'` (**c**hange **s**urrounding **"** with **'**). Deleting a surrounding
+`<div>` is done by `dst` (**d**elete **s**urrounding **t**ag).
+
+[**vim-commentary**](https://github.com/tpope/vim-commentary), yes, *another* tpope
+plugin, wires up language-aware commenting with the vim verbs and motions. `gcc`
+comments or uncomments the current line, and more specifically, `gc` followed by
+any vim motion comments the range spanned by the motion. Commenting three lines starting at the cursor is a simple `gc3j`.
+
+[**Fzf**](https://github.com/junegunn/fzf) is a general purpose fuzzy finder (think
+'CtrlP'). It's lightning fast, and incredibly powerful. It can hook into
+pretty much anything: the filesystem, git commits, vim buffers.
+I keep a couple of keybindings handy for the things I use fzf for most.
+``` vim
+nnoremap <silent>ff :FZF<cr>
+nnoremap <silent>fb :Buffers<cr>
+```
+
+[**vim-easymotion**](https://github.com/easymotion/vim-easymotion) is another
+classic. It takes vim motions and turns it up to eleven. Hitting the `<leader>` key twice, combined with any vim object like a word or paragraph, vim-easymotion overlays labels on every such object, allowing you to instantly jump to the target you need.
+
+[**vim-eunuch**](https://github.com/tpope/vim-eunuch) exposes most commonly used
+filesystem commands (`rm`, `cp`, `mv`, etc...) from within vim. While vim allows
+you to use filesystem commands by prefixing them with a `!`, these operations
+are not in sync with vim's state. If I delete a file from within vim that I have open in a buffer, I want vim to reflect that change. If I move a file, I want vim to update the location of the file in that buffer. This is precisely what vim-eunuch provides. For example, when removing a file using vim-eunuch, any buffer showing the file is automatically unloaded.
+
+Less high profile, but essential nonetheless are
+[**delimitmate**](https://github.com/raimondi/delimitmate) and
+[**vim-bufferline**](https://github.com/bling/vim-bufferline). Delimitmate
+automatically adds closing parentheses and quotes while typing. Bufferline shows
+a list of open buffers, preventing me from having to `:ls` every other second
+when I've forgotten whether I have a file open or not. {% sidenote %} Fzf, being
+a fairly recent addition to my plugin list, really helps in that respect as
+well, allowing me to blindly type fragments of the buffer I want to edit, and
+fzf opens the buffer straight away. {% endsidenote %}
+
+### Language specific plugins
+These are fairly constant: I want syntax highlighting, linting and sane
+auto-completion for the main languages I use.
+```vim
+" HTML
+Plug 'mattn/emmet-vim'
+```
+[**Emmet**](https://emmet.io) shouldn't be a surprise to anyone who's spent any amount of time typing
+HTML. Most editors have an emmet plugin, and if you haven't used it yet,
+I highly recommend it. It simply allows you to type shorthand HTML like
+`.wrapper>ul.nav>li.nav__item*3` and emmet will expand it into something like
+```html
+<div class="wrapper">
+  <ul class="nav">
+    <li class="nav__item"></li>
+    <li class="nav__item"></li>
+    <li class="nav__item"></li>
+  </ul>
+</div>
+```
+
+As for Javascript and Python:
+```vim
+" Javascript / JSX / Typescript
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+Plug 'elzr/vim-json'
+Plug 'leafgarland/typescript-vim'
+Plug 'ianks/vim-tsx'
+
+" Python
+Plug 'nvie/vim-flake8'
+Plug 'klen/python-mode'
+```
+
+Most of these do precisely what you'd expect. Getting correct syntax
+highlighting and completion for Javascript and all its modern siblings (JSX,
+typescript, and any permutation thereof), but these plugins seem to work best
+for me so far.
+
+I've recently been getting into Clojure a bit. Most Clojurists will tell you
+that, if you want the most streamlined development experience you can get, you
+should use Emacs. Something about Emacs itself being written in in a Lisp making
+it very suited for REPL integration and so on. I was curious to try it out, and
+gave [Spacemacs](http://spacemacs.org) a go. Spacemacs is Emacs for vim users.
+It's the tightest vim-emulation I've yet seen in another editor, and I have to
+say it had a lot going for it. I ended up going back to vim in the end (I always
+do), so I was left with finding the best I could get for Clojure development in
+vim. Thankfully, the situation isn't nearly as bad as those Emacs evangelists
+would have us believe!
+
+```vim
+" Clojure / ClojureScript
+Plug 'tpope/vim-fireplace'
+Plug 'eraserhd/parinfer-rust', {'do': 'cargo build --release'}
+Plug 'guns/vim-sexp'
+Plug 'tpope/vim-sexp-mappings-for-regular-people'
+```
+
+The pivotal plugin for clojure development in vim is
+[**vim-fireplace**](https://github.com/tpope/vim-fireplace) by, *of course*,
+mister Tim Pope. It connects vim to a running repl and allows you to evaluate
+any code directly in the REPL and have it output either in the command bar, or
+in a separate scratch buffer. Vim-fireplace also allows for easy documentation
+lookup and namespace navigation, much like you would do in any other
+REPL-integrated IDE. So far, I've found it a dream to use, and haven't missed
+the emacs REPL at all.
+
