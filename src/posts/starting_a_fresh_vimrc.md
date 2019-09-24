@@ -4,7 +4,7 @@ title: "Starting a fresh .vimrc"
 author: Sam Roelants
 layout: post.njk
 tags:
-  - draft 
+  - post 
   - vim
   - config
 description: "I started a fresh .vimrc from scratch, and decided it was a good 
