@@ -180,20 +180,20 @@ body {
   text-align: left;
   font-size: 0.9em; }
 
-.tag {
+.post-metadata .tag {
   display: inline-block;
   padding: 2px 5px;
   margin-left: 2px;
   margin-right: 2px;
   background-color: var(--color-tag);
   border-radius: 4px; }
-  .tag:hover {
+  .post-metadata .tag:hover {
     background-color: #cccccc;
     transition: all 0.1s linear;
     color: #e7e7e7; }
-  .tag a {
+  .post-metadata .tag a {
     text-decoration: none; }
-    .tag a:hover {
+    .post-metadata .tag a:hover {
       color: #333; }
 
 /* ABOUT [ABOU] ***************************************************************/
