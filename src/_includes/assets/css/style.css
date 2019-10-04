@@ -275,7 +275,9 @@ img {
   filter: invert(1); }
 
 p {
-  max-width: inherit; }
+  max-width: inherit;
+  margin-top: 40px;
+  margin-bottom: 40px; }
 
 a {
   text-decoration-color: #16abff;
