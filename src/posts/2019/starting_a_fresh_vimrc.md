@@ -3,6 +3,7 @@ section: blog
 title: "Starting a fresh .vimrc"
 author: Sam Roelants
 layout: post.njk
+date: 2019-09-28
 tags:
   - post 
   - vim

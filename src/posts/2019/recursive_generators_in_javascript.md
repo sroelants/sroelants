@@ -2,6 +2,7 @@
 section: blog
 title: "Recursive generators in javascript" author: Sam Roelants
 layout: post.njk
+date: 2019-10-04
 tags:
   - post 
   - javascript
