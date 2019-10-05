@@ -14,6 +14,10 @@ module.exports = function(eleventyConfig) {
     "src/_includes/assets/js": "assets/js"
   });
 
+  eleventyConfig.addPassthroughCopy({
+    "src/projects": "projects"
+  });
+
   /* Syntax Highlighting*/
   eleventyConfig.addPlugin(syntaxHighlight);
 
