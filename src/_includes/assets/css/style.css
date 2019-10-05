@@ -422,3 +422,18 @@ label.margin-toggle:not(.sidenote-number) {
     top: unset;
     bottom: 10px;
     right: 10px; } }
+
+/* PROJECTS [PROJ] ************************************************************/
+.project__image {
+  filter: grayscale(1); }
+  .project__image:hover {
+    filter: grayscale(0);
+    transition: all 0.1s linear; }
+
+.project__links {
+  display: flex;
+  justify-content: space-around; }
+
+.project__list {
+  list-style: none;
+  padding-left: 20px; }
