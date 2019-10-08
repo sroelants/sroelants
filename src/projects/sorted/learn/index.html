@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#fafafa" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato|Montserrat:300,600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css"
+      integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq"
+      crossorigin="anonymous"
+    />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js"
+      integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js"
+      integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI"
+      crossorigin="anonymous"
+      onload="renderMathInElement(document.body);"
+    ></script>
+
+    <link href="/css/index.css" rel="stylesheet" />
+    <link href="/css/normalize.css" rel="stylesheet" />
+    <meta name="description" content="Popular sorting algorithms visualized" />
+    <title>Sorted - Learn more</title>
+  </head>
+  <body>
+    <header class="header">
+      <a class="header__brand" href="/">
+        <div class="header__brand__logo">
+          <div class="header__brand__logo__bar header__brand__logo__bar1"></div>
+          <div class="header__brand__logo__bar header__brand__logo__bar2"></div>
+          <div class="header__brand__logo__bar header__brand__logo__bar3"></div>
+        </div>
+        <div class="header__brand__sorted">Sorted</div>
+      </a>
+      <nav class="header__nav">
+        <div class="header__nav__item"><a href="/about">ABOUT</a></div>
+        <div class="header__nav__item header__nav__item--active">
+          LEARN MORE
+        </div>
+      </nav>
+    </header>
+    <div class="main">
+      <h1>Learn about sorting algorithms</h1>
+      <p>
+        So you've had a play with some of the sorting algorithms, you've seen
+        them work their magic, but you're still unsure of what it is exactly
+        their doing? Or maybe you've already learned about some of these
+        algorithms, but you're simply looking for a fresh explanation that might
+        resonate more with you. Either way, read on if you'd like a quick run
+        through of how these sorting methods work.
+      </p>
+      <h2>Bubble sort</h2>
+      <img src="./bubblesort.gif" alt="Bubble sort" width="400px" />
+      <p>
+        Ah, bubble sort. Probably one of the most elementary ways to sort a list
+        of numbers, and unfortunately not very efficient either.
+        <a
+          href="https://www.youtube.com/watch?v=koMpGeZpu4Q"
+          target="_blank"
+          rel="noreferrer noopener"
+          >Even Barack Obama agrees</a
+        >. The idea of bubble sort is pretty simple: Start at the beginning of
+        the list. Compare the first element with the next. Is it bigger? Then it
+        ought to be on the left of our element! So we swap them, and carry on.
+        Is our second element larger than the third? If so, swap them too! We
+        keep on doing this until we hit the end of the list. If you stop to
+        think about it, somewhere along the way, we must've come across the
+        largest element in the list. We then compared it to and swapped it with
+        every single element that came after it. (We must've swapped it every
+        time, because the largest element is by definition larger than any of
+        the elements coming after it.) So, by the end of our pass over the list,
+        we are sure that at least one element is in the right place: the largest
+        one. And, hopefully we swapped a whole bunch of other numbers leftward,
+        closer to where they ought to end up in their final sorted place.
+      </p>
+      <p>
+        You'll notice that, if we have \(n\) elements, we're essentially doing
+        \(n\) passes over the entire list, checking at every element whether it
+        is larger than the next. So, we're doing \(n\) passes and doing
+        something like \(n\) checks and swaps on every pass. This means that, on
+        the whole, we're doing something like \(n\times n\) operations. If our
+        list is only 10 elements long, this is no big deal. If it were
+        1,000,000, then we'd be looking at something like 1,000,000,000,000
+        operations!
+      </p>
+      <p>
+        <em>"But"</em>, I hear you say,
+        <em
+          >"it's not like we have to go through the entire list on every pass.
+          The portion of unsorted number gets smaller and smaller. You're just
+          being over dramatic."</em
+        >
+        True enough, you'll definitely be doing <em>less</em> than those
+        \(n\times n\) checks, but in the grand scheme of things, those details
+        won't make much of a difference. The bottom line is: as the list of
+        things you're sorting gets larger, bubble sort takes
+        <em> a lot</em> longer. Typically, we only care about these rough, worst
+        case order of magnitude estimations. We say that bubble sort has
+        \(\mathcal O (n)\) complexity. Just imagine the \(\mathcal O\) stands
+        for <em>Order</em> of magnitude.
+      </p>
+
+      <h2>Merge sort</h2>
+      <img src="./mergesort.gif" alt="Merge sort" width="400px" />
+      <p>
+        Merge sort is a first step up, and a prime example of a so-called
+        <em>divide and conquer</em> algorithm. It solves the problem by dividing
+        it up into smaller sub-problems that, hopefully, are easier to solve.
+      </p>
+      <p>
+        The fundamental idea behind merge sort is the following: suppose we are
+        given <em>two sorted lists</em>. We can combine (<em>merge</em>) these
+        into a single sorted list easily enough: Take both lists, look at their
+        smallest elements (that is, the first ones in the list, because the
+        lists are sorted), pick the smallest of the two, that'll be the smallest
+        number in our combined list. Keep going through both lists until you're
+        done!
+      </p>
+      <p>
+        You'll notice we only needed as many steps as there are numbers in the
+        final list. If we're given two sorted lists with a total of \(n\)
+        numbers, combining them into a single sorted list has an \(\mathcal O
+        (n)\) time complexity.
+      </p>
+      <p>
+        But how does this help us? It's not like we're given two sorted lists of
+        numbers, we're given one big unsorted list! This is where the
+        divide-and-conquer part comes in! We're going to apply the following
+        sneaky trick: Instead of trying to sort the entire list, we could split
+        it up into two halves, sort both, and simply merge those two sorted
+        halves in an \(\mathcal O (n)\) way, as we've seen. Our hope is then
+        that sorting these smaller lists is somehow going to be less work.
+        Sounds reasonable, no?
+      </p>
+      <p>
+        But that begs the question,
+        <em>how do we sort these two smaller lists?</em> That's the beauty of
+        merge sort, we simply sort them doing the exact same thing! Split each
+        of these two smaller lists up into more lists! I mean, at some point
+        these lists must get so small we can just sort them trivially, no? That
+        is, imagine we keep doing this: splitting up each list into smaller and
+        smaller sublists that we will hopefully, eventually sort. What if we end
+        up with a smaller list that only has a single element? Why, we're done!
+        Surely a list with a single element is sorted by default, right?
+      </p>
+      <p>
+        So we can keep breaking up our list into smaller and smaller lists until
+        we hit the point where they're only one element lists, which are already
+        sorted. Then, like we promised, we can start merging all these "sorted"
+        lists two by two to get larger sorted lists, that we can merge two by
+        two to get larger sorted lists... All the way to the point where we end
+        up where we started, with the two sublists that we divided our original
+        list into, except now they'll be in sorted order! One last merge, and
+        we're done!
+      </p>
+      <p>
+        Figuring out whether or not this is any better than for example bubble
+        sort is kind of tricky. How many steps do we need, approximately, to
+        sort a list this way? It's not very obvious, right? Well, we already
+        established that the merging of \(n\) elements takes about \(n\) steps.
+      </p>
+      <p>
+        How many times are we merging? Well, we're merging two lists for every
+        time we divided up a list in two. Merging lists essentially doubles
+        their size, so we can merge lists \(m\) times, where \(m\) is the
+        largest number so that \(2^m \leq n\). There's a name for this in
+        mathematics, and we say that \(m \leq \log_2 n\).
+      </p>
+      <p>
+        So, all in all, we're doing \(\log_2 n\) merges that take \(n\) steps,
+        on average. Merge sort is an order \(\mathcal O (n\log_2 n)\) algorithm.
+      </p>
+      <h2>Heap sort</h2>
+      <img src="./heapsort.gif" alt="Merge sort" width="400px" />
+      <p>
+        Heap sort is a lot more involved to explain well. It relies on a
+        structure called a
+        <em>
+          <a
+            href="https://en.wikipedia.org/wiki/Heap_(data_structure)"
+            target="_blank"
+            rel="noopener noreferrer"
+            >max heap</a
+          ></em
+        >
+        It's essentially a way of organizing a collection of numbers in a tree
+        structure so that every number is larger than the numbers directly below
+        it. The cool thing is, we can represent this kind of heap structure
+        inside our list of numbers by rearranging them! We usually represent a
+        heap in an array by placing the root node of the tree in the first
+        position of the array. The root node has two children, these are placed
+        in position 2 and 3. Both of these children might have children. They're
+        placed in positions 4,5 and 6,7 respectively. That way, it's always
+        clear what any number's "children" are, or who a given number is the
+        direct descendent of.
+      </p>
+
+      <p>
+        Now, why on earth are we talking about these silly ways of rearranging
+        numbers into particular patterns? We want to rearrange them into a
+        sorted list, not a max heap! Well, you'll notice that, if we rearrange
+        our list to be a max heap, the first element in the array will be larger
+        than all its descendents: it's the largest number in the list! That
+        means we can just take it, swap it out with whatever element is in the
+        back of the list, and now at the very least our last element is in its
+        final sorted position. We can keep doing this over and over again: turn
+        the unsorted part of our list into a max heap again (which it clearly
+        isn't: the root node is likely going to be a pretty small number,
+        because it came from the back of our previous max heap), get the second
+        largest number of the list, which will be at the head of the new max
+        heap, and swap it into place. We can keep doing this over and over until
+        we've swapped every element into its rightful place.
+      </p>
+      <p>
+        Sounds pretty involved, doesn't it? This whole set up hinges on two
+        crucial assumption (which turn out to be correct, though we won't prove
+        them here):
+      </p>
+      <ol>
+        <li>
+          Turning our list into a max heap is not as much work as you might
+          fear. It turns out we can do it in an order of \(\mathcal O (n\log_n
+          )\) steps.
+        </li>
+        <li>
+          After swapping out the root of our max heap, it's fairly cheap to
+          restore the remainder to a max heap. We can do it in \(\mathcal O
+          (\log_2 n)\) steps.
+        </li>
+      </ol>
+      <p>
+        This means that, on average, it'll take us about \(\mathcal O (n\log_n
+        )\) steps to sort the whole thing. That's about as good as merge sort.
+        If you look at both algorithms more closely, however, you can show that
+        on the whole, heap sort performs better for most cases.
+      </p>
+      <h2>Quick sort</h2>
+      <img src="./quicksort.gif" alt="Merge sort" width="400px" />
+      <p>
+        The last sorting algorithm we're considering here is perhaps the most
+        famous, or at least most widely used. Most programming languages have
+        some kind of sort function already implemented in their standard
+        library, and chances are this will be quicksort, or a variation thereof.
+      </p>
+      <p>
+        Quick sort is another <em>divide and conquer</em> algorithm, like merge
+        sort. Just like we do with merge sort, we divide up our list of unsorted
+        numbers into two smaller lists that will hopefully be easier to sort.
+        The way in which we divide up the list, however, is radically different
+        from merge sort (where we simply chopped up the list into two halves and
+        tried to sort each half separately).
+      </p>
+      <p>
+        Instead, with quick sort, what we do is we single out one particular
+        element (this can be any element, really: the first, the last, the one
+        in the middle,...), which we'll call the <em>pivot</em>. Then, we run
+        through the entire list and check for each element whether it is smaller
+        or larger than our pivot. If it is smaller, it goes into one list, if
+        it's larger, it goes in the other. At the end of our pass, we end up
+        with two lists: one containing all the numbers smaller than our pivot,
+        one containig all the numbers greater. Doing such a pass over the entire
+        list will of course take \(n\) steps if we have \(n\) numbers.
+      </p>
+      <p>
+        The rest of the algorithm, then, is identical to the merge sort
+        scenario: We simply perform quick sort on both of these new sub-lists,
+        and again and again, until the sub-lists contain only a single element,
+        in which case, they're already sorted! The philosophy of quick sort is
+        this: if we pick any number in an unsorted list, then surely the sorted
+        list should have all the elements smaller than that number to the left,
+        in sorted order, and all elements larger to the right, in sorted order.
+      </p>
+      <p>
+        We can make an analogous estimation for how many steps quick sort takes
+        like we did for merge sort: We have a step that takes \(\mathcal O
+        (n)\). steps (merging two lists for merge sort, creating the two lists
+        for quick sort), and we perform this step on average \(\log_2 n\) times.
+        Such \(log_2 n\) complexities are very common when our algorithm
+        repeatedly divides up the problem into several subproblems. The total
+        time complexity (the worst case amount of steps it'll take) will be of
+        the order \(\mathcal O (n\log_2 n)\).
+      </p>
+    </div>
+
+    <footer class="footer">
+      ©
+      <a
+        href="https://samroelants.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        >Sam Roelants</a
+      >, 2019
+    </footer>
+  </body>
+</html>
