@@ -1,15 +1,15 @@
 ---
 section: blog
-title: "Recursive generators in javascript" author: Sam Roelants
+title: "Recursive generators in javascript" 
+author: Sam Roelants
 layout: post.njk
 date: 2019-10-04
 tags:
-  - post 
+  - post
   - javascript
   - generators
   - recursion
-description: "ES6 finally brought iterators and generators to javascript. 
-Recently, I found out how you can nest generators to implement lazy recursion."
+description: "ES6 finally brought iterators and generators to javascript. Recently, I found out how you can nest generators to implement lazy recursion."
 ---
 
 # Introduction

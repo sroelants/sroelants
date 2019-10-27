@@ -23,6 +23,7 @@ body {
   color: var(--color-fg);
   counter-reset: sidenote-counter;
   font-family: "Open Sans", sans-serif;
+  font-weight: 400;
   transition: all 0.1s linear; }
 
 .page {
@@ -130,7 +131,6 @@ body {
   grid-area: main;
   max-width: 90vw;
   font-size: 1rem;
-  text-align: justify;
   line-height: 1.6;
   margin: auto; }
 
@@ -425,8 +425,10 @@ label.margin-toggle:not(.sidenote-number) {
 
 /* PROJECTS [PROJ] ************************************************************/
 .project__image {
-  filter: grayscale(1); }
+  filter: grayscale(1);
+  opacity: 0.2; }
   .project__image:hover {
+    opacity: 1;
     filter: grayscale(0);
     transition: all 0.1s linear; }
 
