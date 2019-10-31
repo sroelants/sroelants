@@ -105,8 +105,11 @@ body
   box-sizing: border-box
   color: inherit
   text-decoration: none
+  font-weight: 300
   &:hover
-    color: $fg-highlight
+    // color: $fg-highlight
+    color: black
+    font-weight: 300
     border-bottom: 2px solid var(--color-fg)
 
 .header__nav__item--active
@@ -204,8 +207,8 @@ body
   text-align: left
   a
     text-decoration: none
-    &:hover
-      color: $fg-highlight
+    // &:hover
+    //   color: $fg-highlight
 
 .post-metadata
   position: relative
@@ -279,7 +282,7 @@ section
 /* GENERAL ELEMENTS [GENE] ****************************************************/
 h1, h2, h3
   margin-top: 0
-  margin-bottom: 1em
+  margin-bottom: 0.5em
   font-family: $titlefont
   text-align: left
 
@@ -287,10 +290,11 @@ h1
   font-size: 2em
 
 h2
-  font-size: 1.5em
+  font-size: 1.3em
   margin-top: 1.5em
 
 h3
+  font-size: 1em
   margin-top: 1.5em
 
 img
@@ -312,15 +316,17 @@ img
 
 p
   max-width: inherit
-  margin-top: 40px
-  margin-bottom: 40px
+  margin-top: 10px
+  margin-bottom: 20px
 
 a
-  text-decoration-color: $fg-highlight
+  // text-decoration-color: $fg-highlight
+  // font-weight: 700;
   color: inherit
   &:hover
-    text-decoration: none
-    color: $fg-highlight
+    font-weight: 700
+    // text-decoration: none
+    // color: $fg-highlight
 
 iframe
   max-width: 90vw
@@ -329,7 +335,7 @@ iframe
   iframe
     max-width: 40rem
 
-p > code
+p > code, li > code
   background-color: var(--color-code)
   border: 1px solid var(--color-line)
   border-radius: 5px
@@ -480,6 +486,4 @@ label.margin-toggle:not(.sidenote-number)
 .project__list
   list-style: none
   padding-left: 20px
-
-
 
