@@ -5,6 +5,7 @@ author: Sam Roelants
 layout: post.njk
 date: 2019-11-03
 tags:
+  - post
   - clojure
   - quil
   - generative art
