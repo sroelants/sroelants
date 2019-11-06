@@ -33,7 +33,7 @@ Currently reading:
 
 Currently playing:
 - [Mikrokosmos II](https://www.youtube.com/watch?v=K44mcMjH2GE) - *Bela Bartok*
-- [Notebook for Anna Magdalena Bach](https://www.youtube.com/watch?v=K44mcMjH2GE) - *Johann Sebastian Bach*
+- [Notebook for Anna Magdalena Bach](https://www.youtube.com/watch?v=FRyE7kN0rlk) - *Johann Sebastian Bach*
 
 
 <!--
