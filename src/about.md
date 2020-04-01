@@ -27,9 +27,8 @@ I like books.
 
 ## Currently
 Currently reading:
-- [Tonal Harmony, with an introduction to twentieth-century music](https://www.goodreads.com/book/show/168322.Tonal_Harmony_with_an_Introduction_to_Twentieth_Century_Music?from_search=true) - *Kostka
-    & Payne*
-- [Clojure Programming](https://www.goodreads.com/book/show/10883803-clojure-programming?from_search=true) - *Chas Emerick*
+- [Fear and Trembling](https://www.amazon.com/Trembling-Penguin-Classics-Soren-Kierkegaard/dp/0140444491) - *Søren Kierkegaard*
+- [Types and programming languages](https://www.amazon.com/Types-Programming-Languages-MIT-Press/dp/0262162091) - *Benjamin Pierce*
 
 Currently playing:
 - [Mikrokosmos II](https://www.youtube.com/watch?v=K44mcMjH2GE) - *Bela Bartok*
