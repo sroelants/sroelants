@@ -2,6 +2,7 @@
 section: blog
 title: "Streamlining my git workflow in vim"
 author: Sam Roelants
+date: 2020-09-10
 layout: post.njk
 tags:
   - post

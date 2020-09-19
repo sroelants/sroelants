@@ -86,12 +86,12 @@ module.exports = function(eleventyConfig) {
 
     return `
       <div class="post-metadata">
+        ${tagMarkup}
         <span class="date">
         <time datetime="${moment(date).toISOString()}">
           ${moment(date).format("LL")}
         </time>
         </span>
-        ${tagMarkup}
       </div>`;
   });
 

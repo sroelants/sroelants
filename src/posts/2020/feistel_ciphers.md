@@ -2,6 +2,7 @@
 section: blog
 title: "Feistel ciphers"
 author: Sam Roelants
+date: 2020-09-15
 layout: post.njk
 tags:
   - post

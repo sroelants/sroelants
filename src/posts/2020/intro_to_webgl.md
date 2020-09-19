@@ -2,6 +2,7 @@
 section: blog
 title: "Getting started with WebGL"
 author: Sam Roelants
+date: 2020-04-04
 layout: post.njk
 tags:
   - post
@@ -47,7 +48,9 @@ Can you believe that is completely rendered _on the fly, within the browser_?
 So this is the painful part. While the WebGL specification is extremely 
 versatile and powerful, it's not exactly a joy to work with. A typical
 flow chart you'll see pop up is 
+
 ![Graphics pipeline](/assets/img/2020/graphics-pipeline.png)
+
 _Yikes!_ I'll try to minimize the nitty gritty details and keep the discussion 
 at a higher level. Still, after reading this, hopefully the flow chart will make
 a little more sense.
