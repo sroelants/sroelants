@@ -1,16 +1,20 @@
 ---
 layout: mainlayout.njk
-title: Sam Roelants
+title: About - Sam Roelants
 section: about
 ---
 
 I'm a self-taught sofware engineer who started hacking away on his parents' old
 computer back when Perl, CSS2 and XHTML were all the rage.
 
-[Here's a list](https://www.samroelants.com/projects) of things I've gotten 
-up to recently.
+<!-- [Here's a list](https://www.samroelants.com/projects) of things I've gotten 
+up to recently. -->
 
-## Interests
+# Now
+I've started keeping a [`/now` page](../now) where you
+can see updates on what's on my mind at this particular time in my life.
+
+# Interests
 I have a weak spot for the mathematical side of computer science
 (category theory, type theory, machine learning). 
 I'm partial to functionally oriented languages, be they of the Lisp-y 
@@ -25,44 +29,5 @@ and all-out outdoors enthousiast. I feel strongly about veganism and
 more ethical approaches to food (though in a very non-militant way!).
 I like books. 
 
-## Currently
-Currently reading:
-- [Fear and Trembling](https://www.amazon.com/Trembling-Penguin-Classics-Soren-Kierkegaard/dp/0140444491) - *Søren Kierkegaard*
-- [Types and programming languages](https://www.amazon.com/Types-Programming-Languages-MIT-Press/dp/0262162091) - *Benjamin Pierce*
-
-Currently playing:
-- [Mikrokosmos II](https://www.youtube.com/watch?v=K44mcMjH2GE) - *Bela Bartok*
-- [Notebook for Anna Magdalena Bach](https://www.youtube.com/watch?v=FRyE7kN0rlk) - *Johann Sebastian Bach*
-
-
-<!--
-<p>
-
-  <a href="https://www.samroelants.com/projects" of things I've gotten 
-  up to recently.
-</p>
-  <section id="interests">
-    <h2>Interests</h2>
-    <p>
-      I have a weak spot for the mathematical side of computer science
-      (category theory, type theory). I'm partial to functionally oriented 
-      languages, be they of the Lisp-y (Clojure(Script)) or ML-y (Haskell,
-      Purescript) variety.
-    </p>
-    <p>
-      Aside from software, I am an avid climber, mountaineer, runner
-      and all-out outdoors enthousiast. I feel strongly about veganism and 
-      more ethical approaches to food (though in a very non-militant way!). 
-      I like books. 
-    </p>
-
-    If I had three wishes, I would wish for:
-    <ol>
-      <li> Enough money to stay enrolled at my alma mater for life and spend my
-        life studying.</li>
-      <li> The ability to play the <a href="https://www.youtube.com/watch?v=3QH8MstNkKg" target="_blank">Chopin Ballades</a>. Currently working my way 
-        through the <a href="https://www.youtube.com/watch?v=FRyE7kN0rlk">Anna-Magdalena Bach Notebook</a>. But someday...</li>
-      <li>World peace, of course.</li>
-    </ol>
-  </section>
--->
+I keep an [index of lecture series](/lectures) that had a significant impact on me, and would
+recommend to anyone.

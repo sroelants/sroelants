@@ -1,0 +1,331 @@
+:root {
+  --color-bg: #fbfbfb;
+  --color-fg: #333;
+  --color-fg-muted: #ccc;
+  --color-line: #eee;
+  --color-tag: #e6e6e6;
+  --color-code: #f2f2f2;
+}
+
+[data-theme="dark"] {
+  --color-bg: #333;
+  --color-fg: #fbfbfb;
+  --color-line: #444;
+  --color-tag: #555;
+  --color-code: #555;
+}
+
+.mode-toggle {
+  display: none;
+}
+
+body {
+  font-size: 14px;
+  background: var(--color-bg);
+  color: var(--color-fg);
+  counter-reset: sidenote-counter;
+  font-family: "Roboto Mono", "Inconsolata", monospace;
+  overflow: scroll;
+}
+
+p {
+  margin: 30px 0;
+}
+
+img:not(.social-icon),
+iframe {
+  display: block;
+  max-width: 100%;
+  margin: 20px auto;
+}
+
+.page {
+  padding: 50px;
+  display: grid;
+  grid-gap: 10px 30px;
+  grid-template-columns: auto 600px auto;
+  grid-template-areas:
+    "left main right"
+    "left footer right"
+    "left icons right";
+}
+
+h1 {
+  font-size: 1.5em;
+}
+
+h2 {
+  font-size: 1.3em;
+}
+
+h3 {
+  font-size: 1.1em;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  font-weight: bold;
+  font-style: normal;
+}
+
+.main.h1 {
+  margin: 30px 0;
+}
+.main h1::before {
+  content: "#";
+  color: var(--color-fg-muted);
+  margin: 10px;
+}
+
+.main h2::before {
+  content: "##";
+  color: var(--color-fg-muted);
+  margin: 0 10px;
+}
+
+.main h3::before {
+  content: "###";
+  color: var(--color-fg-muted);
+  margin: 0 10px;
+}
+
+code {
+  font-weight: bold;
+  background-color: #eee;
+  padding: 3px;
+  border-radius: 3px;
+}
+
+/* Navigation */
+
+h1.header__name {
+  font-size: 1em;
+}
+
+.header__nav__item--active {
+  font-weight: bold;
+}
+.header__nav__item--active::after {
+  content: "⇠ ";
+  margin: 0 5px;
+  position: absolute;
+}
+
+header {
+  grid-area: left;
+  text-align: right;
+  margin: 10px 0;
+}
+
+/* Main */
+
+.main {
+  grid-area: main;
+  text-align: justify;
+}
+
+.main a {
+  text-decoration: underline dotted;
+}
+
+.main a:hover {
+  color: var(--color-bg);
+  background-color: var(--color-fg);
+  font-weight: normal;
+}
+
+/* Posts */
+.post-title {
+  text-align: center;
+  font-size: 1.1em;
+  margin: 20px auto;
+}
+
+.post-metadata {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  color: var(--color-fg-muted);
+  font-size: 0.9em;
+}
+
+.post-metadata .tag:hover {
+  color: var(--color-fg);
+}
+
+.post-metadata .tag::after {
+  content: "⋅";
+  margin: 5px;
+}
+.post-metadata .tag:hover::after {
+  content: "⋅";
+  color: var(--color-fg-muted);
+}
+
+/* Resume *********************************************************************/
+
+section {
+  margin: 20px 0;
+}
+/* Skills */
+
+#skills ul {
+  padding: 0;
+}
+#skills ul li {
+  list-style: none;
+  margin: 10px 20px;
+}
+
+#skills ul li strong {
+  font-style: italic;
+}
+
+/* Experience + Education */
+.item {
+  display: flex;
+  margin: 20px 0;
+}
+
+.item .activity_date {
+  text-align: center;
+  width: 50px;
+  margin: 20px;
+}
+
+.item .item_content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
+.item .item_content .title {
+  font-weight: bold;
+}
+.item .item_content .description {
+  font-style: italic;
+}
+
+/* Footer */
+
+footer {
+  grid-area: footer;
+}
+
+/* Sidenotes ******************************************************************/
+
+.sidenote {
+  float: right;
+  clear: right;
+  margin-right: -45%;
+  width: 40%;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 0.8em;
+  line-height: 1.3;
+  vertical-align: baseline;
+  position: relative;
+}
+
+.sidenote-number {
+  margin-left: -0.3em;
+  counter-increment: sidenote-counter;
+}
+
+.sidenote-number:after,
+.sidenote:before {
+  position: relative;
+  vertical-align: baseline;
+}
+
+.sidenote-number:after {
+  content: counter(sidenote-counter);
+  font-size: 0.6em;
+  top: -0.5em;
+  left: 0.1em;
+}
+
+.sidenote:before {
+  content: counter(sidenote-counter);
+  font-size: 0.7em;
+  top: -0.5em;
+}
+
+input.margin-toggle {
+  display: none;
+}
+
+label.sidenote-number {
+  display: inline;
+}
+
+label.margin-toggle:not(.sidenote-number) {
+  display: none;
+}
+
+@media (max-width: 85rem) {
+  .sidenote {
+    display: none;
+  }
+  .sidenote-number:after {
+    position: relative;
+    z-index: -10;
+    font-weight: 700;
+    background: #f2f2f2;
+    border-radius: 3px;
+    padding: 0 0.4em;
+    border: 1px solid #d9d9d9;
+  }
+  .margin-toggle:checked + .sidenote {
+    display: block;
+    float: left;
+    left: 1rem;
+    clear: both;
+    width: 95%;
+    margin: 1rem 2.5%;
+    vertical-align: baseline;
+    position: relative;
+  }
+  label {
+    cursor: pointer;
+  }
+}
+/* Icons **********************************************************************/
+.icons {
+  text-align: center;
+  grid-area: icons;
+}
+
+.social-icon {
+  margin: 0.1rem;
+  width: 25px;
+  opacity: 0.3;
+  transition: all 0.1s linear;
+}
+
+.social-icon:hover {
+  opacity: 0.6;
+}
+
+.social-icon:active {
+  opacity: 0.7;
+  transform: translateY(1px);
+}
+
+[data-theme="dark"] .social-icon {
+  filter: invert(1);
+}
+
+/* Footer *********************************************************************/
+.footer {
+  grid-area: footer;
+  text-align: center;
+  font-size: 0.8rem;
+  margin-bottom: 1rem;
+  max-width: 40rem;
+}
