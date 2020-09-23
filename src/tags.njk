@@ -11,7 +11,7 @@ filter:
 ---
 <h1>Tagged “{{ tag }}”</h1>
 
-<ul class="post-list">
+<section class="post-list">
 {% set taglist = collections[ tag ] %}
 {% for post in taglist | reverse %}
 <article>
@@ -31,4 +31,4 @@ filter:
 
 </article>
 {% endfor %}
-</ul>
+</section>

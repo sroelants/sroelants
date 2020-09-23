@@ -7,9 +7,6 @@ section: about
 I'm a self-taught sofware engineer who started hacking away on his parents' old
 computer back when Perl, CSS2 and XHTML were all the rage.
 
-<!-- [Here's a list](https://www.samroelants.com/projects) of things I've gotten 
-up to recently. -->
-
 # Now
 I've started keeping a [`/now` page](../now) where you
 can see updates on what's on my mind at this particular time in my life.
