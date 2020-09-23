@@ -10,6 +10,7 @@
 [data-theme="dark"] {
   --color-bg: #333;
   --color-fg: #fbfbfb;
+  --color-fg-muted: #777;
   --color-line: #444;
   --color-tag: #555;
   --color-code: #555;
@@ -24,7 +25,7 @@ body {
   background: var(--color-bg);
   color: var(--color-fg);
   counter-reset: sidenote-counter;
-  font-family: "Inconsolata", "Roboto Mono", "Inconsolata", monospace;
+  font-family: "Inconsolata", "Roboto Mono", monospace;
   overflow: scroll;
 }
 
@@ -37,6 +38,10 @@ iframe {
   display: block;
   max-width: 100%;
   margin: 20px auto;
+}
+
+[data-theme="dark"] img {
+  filter: invert(1);
 }
 
 .page {
@@ -94,9 +99,9 @@ a:hover {
 }
 
 :not(pre) > code {
-  font-weight: bold;
-  background-color: #eee;
-  padding: 3px;
+  font-family: inherit;
+  background-color: var(--color-code);
+  padding: 0 3px;
   border-radius: 3px;
 }
 
@@ -348,7 +353,7 @@ label.margin-toggle:not(.sidenote-number) {
     background: var(--color-bg);
     color: var(--color-fg);
     counter-reset: sidenote-counter;
-    font-family: "Roboto Mono", "Inconsolata", monospace;
+    font-family: "Inconsolata", "Roboto Mono", monospace;
     overflow: scroll;
   }
 

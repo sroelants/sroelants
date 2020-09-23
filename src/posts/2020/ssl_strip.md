@@ -24,7 +24,7 @@ talking to Bob. Instead of Alice setting up a secret connection with Bob,
 Eve sets up a secret connection with both Alice and Bob, and relays all the
 communications. Eve ends up controlling the entire communication.
 
-![Man-in-the-middle attack](/assets/img/2020/man_in_the_middle.png)
+<img class="invert" src="/assets/img/2020/man_in_the_middle.png" alt="man in the middle attack" />
 
 Public-key crytpography doesn't have a solution for this problem, and the only
 way we've found around this attack is the mechanism of _certificates_, signed by
@@ -63,7 +63,7 @@ to `http` before sending the response back to the user. To the user, the only
 noticeable difference would be that the connection remains over `http`
 instead of `https`, but other than that, the user experience is identical. 
 
-![SSL stripping attack](/assets/img/2020/ssl_strip.png)
+<img class="invert" src="/assets/img/2020/ssl_strip.png" alt="ssl stripping attack" />
 
 Certificates are of no help here, because the user's browser never even realizes
 it should be communicating over TLS!

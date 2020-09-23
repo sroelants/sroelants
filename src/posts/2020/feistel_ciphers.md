@@ -38,14 +38,14 @@ my own peace of mind.
 # A graphic representation of a Feistel cipher
 Here's a basic sketch of a Feistel network. 
 
-<img src="/assets/img/2020/feistel_network.png" width="50%" />
+<img class="invert" src="/assets/img/2020/feistel_network.png" width="50%" />
 
 In it, we're trying to encrypt the block $B$ using a secret key $K$. The basic
 operations that make up the encryption (and decryption, as we'll see) are the
 XOR ($\oplus$) and the $F$ function. The procedure is essentially a single step,
 repeated:
 
-<img src="/assets/img/2020/feistel_round.png" width="50%" />
+<img class="invert" src="/assets/img/2020/feistel_round.png" width="50%" />
 
 We take the block $B$ and divide it up into a left block $L$ and right block $R$.
 We then pass $R$ through our function $F$ that will scramble the subblock, and
@@ -89,7 +89,7 @@ block, and use some other step to scramble the entire block. We'd get twice as
 much encrypting in if we didn't restrict ourselves to encrypting one half at a 
 time. One could conceive of something like the following:
 
-<img src="/assets/img/2020/aes_round.png" width="50%" />
+<img class="invert" src="/assets/img/2020/aes_round.png" width="50%" />
 
 Honestly, that's a totally viable way of doing things, and it is -- in
 a nutshell -- the way AES operates! Splitting the block into left and right has
@@ -99,7 +99,7 @@ some cool benefits, though.
 The cool thing about the $L$/$R$ split is the following. Suppose we want to
 start decrypting our block by running this algorithm in reverse from the end.
 
-<img src="/assets/img/2020/feistel_last_round.png" width="50%" />
+<img class="invert" src="/assets/img/2020/feistel_last_round.png" width="50%" />
 
 The block we've received is $(L_i, R_i)$, which we can write in terms of the
 previous round as $(R_{i-1},\, L_i\oplus F(K_i, R_i-1))$. What we _want_ to get
