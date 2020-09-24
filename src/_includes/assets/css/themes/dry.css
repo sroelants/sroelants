@@ -146,7 +146,7 @@ header {
 }
 
 .main a {
-  text-decoration: underline dotted;
+  text-decoration: underline dotted var(--color-fg);
 }
 
 .main a:hover {
