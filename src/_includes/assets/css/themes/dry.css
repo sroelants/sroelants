@@ -21,16 +21,18 @@
 }
 
 body {
-  font-size: 16px;
+  font-size: 14px;
   background: var(--color-bg);
   color: var(--color-fg);
   counter-reset: sidenote-counter;
-  font-family: "Inconsolata", "Roboto Mono", monospace;
+  font-family: "Fira Code", "Inconsolata", "Roboto Mono", monospace;
   overflow: scroll;
+  font-weight: 500;
 }
 
 p {
   margin: 30px 0;
+  line-heigh: 1.5;
 }
 
 img:not(.social-icon),
