@@ -2,7 +2,7 @@
 section: blog
 title: "Effective Altruism, a caveat."
 author: Sam Roelants
-date: 2020-06-11
+date: 2021-06-11
 layout: post.njk
 tags:
   - post
