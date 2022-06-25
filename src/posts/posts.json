@@ -1,4 +1,0 @@
-{
-  "permalink": "/blog/{{title | slug }}/index.html",
-  "layout": "post.njk"
-}

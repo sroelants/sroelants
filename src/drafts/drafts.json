@@ -1,4 +1,0 @@
-{
-  "permalink": "/drafts/{{title | slug }}/index.html",
-  "layout": "post.njk"
-}
