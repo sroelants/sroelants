@@ -1,0 +1,14 @@
+---
+import { format, parseISO } from "date-fns"
+import TagList from "./TagList.astro"
+const { title, date, description, url, tags } = Astro.props.entry;
+
+const prettyDate = format(parseISO(date), 'LLLL d, yyyy');
+---
+<div class="relative my-8">
+  <span class="text-2xl bold"><a href={`${url}`}>{title}</a></span>
+  <p class="py-1">{description}</p>
+  <div class="text-slate-400 text-sm">
+  <span class="mr-2">Published: {prettyDate},</span>
+  <span class="mr-2">Tags: {<TagList tags={tags} />}</span>
+</div>

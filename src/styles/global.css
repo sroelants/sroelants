@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,400&display=swap');
+
+@import url("https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css");
+
+@tailwind base;
+
+@layer base {
+  p {
+    @apply py-4 text-justify;
+  }
+
+  h1 {
+    @apply text-6xl font-black pb-24;
+  }
+
+  h2 {
+    @apply text-xl font-bold pt-4;
+  }
+
+  h3 {
+    @apply text-base font-bold pt-4;
+  }
+
+  html {
+    @apply bg-slate-50 text-slate-900;
+  }
+
+  body {
+    @apply bg-slate-50 text-slate-900 text-lg;
+  }
+
+  a {
+    @apply text-teal-500 hover:text-teal-400;
+  }
+
+  pre {
+    @apply rounded p-10;
+  }
+
+  code {
+    @apply text-base;
+  }
+}
+
+@tailwind components;
+
+@tailwind utilities;
+

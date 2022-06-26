@@ -1,0 +1,15 @@
+---
+import "./TagList.css";
+const { tags } = Astro.props;
+---
+<ul class="taglist list-none inline-flex mx-1">
+  {tags.map(tag => {
+  return (
+    <li class="pr-1">
+      <a href={`/tag/${tag}`} class="color-slate-500">
+        {tag}
+      </a>
+    </li>
+    )
+  })}
+</ul>
