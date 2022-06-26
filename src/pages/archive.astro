@@ -1,0 +1,36 @@
+---
+import PageLayout from "../layouts/PageLayout.astro";
+import ArchiveEntry from "../components/ArchiveEntry.astro";
+
+type PostFrontmatter = {
+  title: string;
+  author: string;
+  date: string;
+  description: string;
+  tags: string[];
+}
+
+type EntryData = {
+  title: string;
+  date: string;
+  description: string;
+  tags: string[];
+  url: string;
+};
+
+const posts = await Astro.glob<PostFrontmatter>('../pages/posts/*.md');
+
+const entries: EntryData[] = posts.map(post => ({
+  title: post.frontmatter.title,
+  date: post.frontmatter.date,
+  description: post.frontmatter.description,
+  tags: post.frontmatter.tags,
+  url: post.url
+}));
+---
+<PageLayout>
+  {entries
+    .sort((p1, p2) => p1.date > p2.date ? 1 : -1)
+    .reverse()
+    .map(entry => <ArchiveEntry entry={entry} />)}
+</PageLayout>

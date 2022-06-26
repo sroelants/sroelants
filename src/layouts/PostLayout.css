@@ -1,0 +1,11 @@
+.footnotes ol li {
+    @apply list-decimal text-base;
+}
+
+.footnotes p {
+    @apply py-0.5;
+}
+
+.footnotes li::marker {
+    @apply text-teal-500;
+}

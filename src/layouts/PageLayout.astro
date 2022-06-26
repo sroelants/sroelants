@@ -1,0 +1,23 @@
+---
+import Header from "../components/Header.astro";
+import "../styles/global.css";
+---
+
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="The personal blog of Sam Roelants." />
+    <meta name="author" content="Sam Roelants" />
+  </head>
+  <body>
+    <div class="min-w-screen min-h-screen flex justify-center">
+      <div class="w-[650px] py-20">
+        <Header />
+        <div class="py-20">
+          <slot />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

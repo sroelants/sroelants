@@ -1,0 +1,4 @@
+.taglist li:not(:first-child):before {
+  content: ' · ';
+  @apply pr-1;
+}
