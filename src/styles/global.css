@@ -21,14 +21,6 @@
     @apply text-base font-bold pt-4;
   }
 
-  html {
-    @apply bg-slate-50 text-slate-900;
-  }
-
-  body {
-    @apply bg-slate-50 text-slate-900 text-lg;
-  }
-
   a {
     @apply text-teal-500 hover:text-teal-400;
   }
