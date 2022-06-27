@@ -2,7 +2,11 @@
 import Navigation from "./Navigation.astro";
 ---
 
-<div class="lg:flex lg:justify-start lg:items-start justify-center items-center flex-column">
+<div class={`
+  lg:flex lg:justify-start lg:items-start
+  flex-column justify-center items-center 
+  text-lg
+`}>
   <div class="font-black flex justify-center lg:justify-start">Sam Roelants</div>
   <Navigation />
 </div>

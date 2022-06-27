@@ -1,19 +1,23 @@
 import { Component, createSignal, JSXElement } from "solid-js";
 
-const [darkMode, setDarkMode] = createSignal(false);
-const toggleDark = () => {
+const [darkMode, setDarkMode] = createSignal(localStorage?.getItem("theme") === "dark");
+export const getTheme = () => darkMode() ? "dark" : "light";
 
-  console.log("Click", darkMode());
+const toggleDark = () => {
   setDarkMode(darkMode => !darkMode);
+  document.documentElement.classList.remove('dark', 'light');
+
+  if (typeof window !== "undefined") {
+    window.localStorage.setItem("theme", getTheme());
+  }
 }
 
 export const DarkModeProvider: Component<{ children: JSXElement }> =
   ({ children }) => {
-    return <div class={darkMode() ? "dark" : ""}>{children}</div>
+    return <div class={`${getTheme()} overflow-hidden`}> {children}</div >
   };
 
 export const DarkModeToggle: Component = () => {
-
   return (
     <svg
       width="40"
@@ -43,12 +47,10 @@ export const DarkModeToggle: Component = () => {
           dark:translate-x-full
           fill-slate-100 stroke-slate-200 
           dark:fill-teal-500 dark:stroke-teal-400
-          transition duration-[1000] ease-in 
+          transition duration-[1000] ease-in
           drop-shadow-xl`}
         stroke-width="10"
       />
     </svg>
-  )
-
-}
-
+  );
+};
