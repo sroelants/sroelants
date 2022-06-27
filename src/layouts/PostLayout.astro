@@ -16,5 +16,5 @@ const { content } = Astro.props;
   <time dateTime={content.date} class="text-sm text-slate-600">
     {format(parseISO(content.date), 'LLLL d, yyyy')}
   </time>
-<slot />
+    <slot />
 </PageLayout>

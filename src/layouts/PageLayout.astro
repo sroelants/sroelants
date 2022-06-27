@@ -1,6 +1,6 @@
 ---
 import Header from "../components/Header.astro";
-import { DarkModeProvider, DarkModeToggle} from "../components/DarkModeToggle.tsx";
+import { getTheme, DarkModeProvider, DarkModeToggle } from "../components/DarkModeToggle.tsx";
 import "../styles/global.css";
 ---
 
@@ -10,20 +10,33 @@ import "../styles/global.css";
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="The personal blog of Sam Roelants." />
     <meta name="author" content="Sam Roelants" />
+
+    <script is:inline>
+      const theme = localStorage.getItem('theme')
+      if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark')
+        window.localStorage.setItem('theme', 'dark')
+      } else {
+        document.documentElement.classList.remove('dark')
+        window.localStorage.setItem('theme', 'light')
+      }
+    </script>
+
   </head>
   <body>
     <DarkModeProvider client:load>
       <div class={`
           lg:text-lg
-          px-4
+          p-4 w-screen 
           min-w-screen min-h-screen 
           flex justify-center 
           bg-slate-50 text-slate-900 
           dark:text-slate-300 dark:bg-slate-900
           transition duration-150 ease-linear
+          max-w-full overflow-hidden
       `}>
-        <div class="w-[650px] py-20 relative">
-          <div class="absolute right-0"><DarkModeToggle client:load /></div>
+        <div class="lg:w-[650px] px-4 w-screen py-20 relative">
+          <div class="absolute right-4 lg:right-0"><DarkModeToggle client:load /></div>
           <Header />
           <div class="py-20">
             <slot />

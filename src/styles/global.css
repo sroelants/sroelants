@@ -6,7 +6,7 @@
 
 @layer base {
   p {
-    @apply py-4 text-justify;
+    @apply py-4 text-justify max-w-full;
   }
 
   h1 {
@@ -26,12 +26,22 @@
   }
 
   pre {
-    @apply rounded p-10;
+    @apply rounded lg:p-10 p-2 lg:text-lg;
+  }
+
+  iframe {
+    @apply max-w-full ;
+  }
+
+  img {
+    @apply max-w-full m-auto justify-center;
   }
 
   code {
-    @apply text-base;
+    @apply lg:text-base text-sm;
   }
+
+  
 }
 
 @tailwind components;
