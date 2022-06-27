@@ -26,7 +26,7 @@
   }
 
   pre {
-    @apply rounded lg:p-10 p-2 lg:text-lg;
+    @apply rounded md:p-10 p-2 md:text-lg;
   }
 
   iframe {
@@ -38,7 +38,7 @@
   }
 
   code {
-    @apply lg:text-base text-sm;
+    @apply md:text-base text-sm;
   }
 
   
