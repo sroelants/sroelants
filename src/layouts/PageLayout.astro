@@ -26,7 +26,7 @@ import "../styles/global.css";
   <body>
     <DarkModeProvider client:load>
       <div class={`
-          lg:text-lg
+          text-lg
           p-4 w-screen 
           min-w-screen min-h-screen 
           flex justify-center 
@@ -35,8 +35,8 @@ import "../styles/global.css";
           transition duration-150 ease-linear
           max-w-full overflow-hidden
       `}>
-        <div class="lg:w-[650px] px-4 w-screen py-20 relative">
-          <div class="absolute right-4 lg:right-0"><DarkModeToggle client:load /></div>
+        <div class="md:w-[650px] px-4 w-screen py-20 relative">
+          <div class="absolute right-4 md:right-0"><DarkModeToggle client:load /></div>
           <Header />
           <div class="py-20">
             <slot />
