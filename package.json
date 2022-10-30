@@ -17,7 +17,7 @@
   "devDependencies": {
     "@11ty/eleventy": "^0.9.0",
     "@11ty/eleventy-plugin-syntaxhighlight": "^2.0.3",
-    "browser-sync": "^2.26.7",
+    "browser-sync": "^2.27.10",
     "clean-css": "^4.2.3",
     "eleventy-plugin-typeset": "^1.0.0",
     "eslint": "^6.8.0",
