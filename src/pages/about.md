@@ -7,10 +7,6 @@ layout: "../layouts/PageLayout.astro"
 I'm a self-taught sofware engineer who started hacking away on his parents' old
 computer back when Perl, CSS2 and XHTML were all the rage.
 
-## Now
-I've started keeping a [`/now` page](../now) where you
-can see updates on what's on my mind at this particular time in my life.
-
 ## Interests
 I have a weak spot for the mathematical side of computer science
 (category theory, type theory, machine learning). 
