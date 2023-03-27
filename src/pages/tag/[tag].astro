@@ -1,54 +1,41 @@
 ---
 import PageLayout from "../../layouts/PageLayout.astro";
 import ArchiveEntry from "../../components/ArchiveEntry.astro";
+import type { InferGetStaticParamsType, InferGetStaticPropsType } from "astro";
+import { getCollection } from "astro:content";
 
-type PostFrontmatter = {
-  title: string;
-  author: string;
-  date: string;
-  description: string;
-  tags: string[];
-}
+type Props = InferGetStaticPropsType<typeof getStaticPaths>;
+type Params = InferGetStaticParamsType<typeof getStaticPaths>;
 
-type EntryData = {
-  title: string;
-  date: string;
-  description: string;
-  tags: string[];
-  url: string;
-};
-
+const { tag } = Astro.params as Params;
+const { posts }: Props = Astro.props;
 
 export const getStaticPaths = async () => {
-  const allPosts = await Astro.glob<PostFrontmatter>('../posts/*.md');
-  const tags = new Set(allPosts.flatMap(post => post.frontmatter.tags ?? []));
+  const posts = await getCollection("posts");
+  const tags = new Set(posts.flatMap(post => post.data.tags ?? []));
 
   return Array.from(tags).map(tag => { 
     return {
       params: { tag },
       props: { 
-        posts: allPosts.filter(p => p.frontmatter.tags?.includes(tag))
+        posts: posts
+          .filter(post => post.data.tags.includes(tag))
+          .map(post => ({
+            title: post.data.title,
+            date: post.data.date,
+            description: post.data.description,
+            url: post.slug,
+            tags: post.data.tags,
+          }))
       }
     }
   });
 };
-
-const { tag } = Astro.params;
-const { posts } = Astro.props;
-
-const entries: EntryData[] = posts.map(post => ({
-  title: post.frontmatter.title,
-  date: post.frontmatter.date,
-  description: post.frontmatter.description,
-  tags: post.frontmatter.tags,
-  url: post.url
-}));
-
 ---
 <PageLayout>
 <h2>Tagged with "{tag}"</h2>
-  {entries
+  {posts
     .sort((p1, p2) => p1.date > p2.date ? 1 : -1)
     .reverse()
-    .map(entry => <ArchiveEntry entry={entry} />)}
+    .map(post => <ArchiveEntry entry={post} />)}
 </PageLayout>
