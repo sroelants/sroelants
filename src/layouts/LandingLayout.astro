@@ -1,6 +1,5 @@
 ---
-import Header from "../components/Header.astro";
-import { DarkModeProvider, DarkModeToggle } from "../components/DarkModeToggle";
+import { DarkModeProvider } from "../components/DarkModeToggle";
 import "../styles/global.css";
 ---
 
@@ -30,13 +29,11 @@ import "../styles/global.css";
           text-lg
           p-4 w-screen 
           min-w-screen min-h-screen 
-          flex justify-center 
+          flex justify-center items-center 
           transition duration-150 ease-linear
           max-w-full overflow-hidden
       `}>
-        <div class="md:w-[650px] px-4 w-screen py-20 relative">
-          <div class="absolute right-4 md:right-0"><DarkModeToggle client:load /></div>
-          <Header />
+        <div class="md:w-[1000px] px-4 w-screen py-20 relative">
           <div class="py-20">
             <slot />
           </div>
