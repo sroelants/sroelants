@@ -1,5 +1,53 @@
 ---
-import PageLayout from "../layouts/PageLayout.astro";
+import Box from "../components/Box.astro";
+import { DarkModeToggle } from "../components/DarkModeToggle";
+import Icon from "../components/Icon.astro";
+import Latest from "../components/Latest.astro";
+import LatestItem from "../components/LatestItem.astro";
+import LandingLayout from "../layouts/LandingLayout.astro";
 ---
 
-<PageLayout>Hi!</PageLayout>
+<LandingLayout>
+  <div class="flex">
+    <div class="w-4/6">
+      <div class="text-7xl font-black">
+        Sam<br />
+        Roelants
+      </div>
+
+      <div class="py-5 text-slate-500 w-7/12">
+        Explorations in programming, music, or whatever else happened to cross my mind.
+      </div>
+
+      <div class="flex justify-between w-5/12 text-base text-teal-600">
+      <a href="./about">About</a>
+      <a href="./archive">Writing</a>
+      <a href="https://github.com/sroelants">Code</a>
+      <a href="mailto://sam@samroelants.com">Contact</a>
+      </div>
+    </div>
+
+  <div class="w-5/12">
+      <div class="flex justify-end p-3">
+        <DarkModeToggle client:load />
+      </div>
+      <Box title="Now" class="text-slate-600 dark:text-slate-400 h-fit text-base m-3">
+        <div class="flex items-center">
+          <Icon name="book" /> Leo Tolstoy &mdash; Anna Karenina
+        </div>
+
+        <div class="flex items-center">
+          <Icon name="headphones" /> ISIS
+          &mdash; Panopticon
+        </div>
+
+        <div class="flex items-center">
+          <Icon name="map-pin" /> France
+        </div>
+      </Box>
+
+      <Latest />
+
+    </div>
+  </div>
+</LandingLayout>
