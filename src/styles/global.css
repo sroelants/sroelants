@@ -5,6 +5,10 @@
 @tailwind base;
 
 @layer base {
+  .global-colors {
+    @apply bg-slate-50 dark:bg-slate-900 text-slate-700 dark:text-slate-300   
+  }
+
   p {
     @apply py-4 text-justify max-w-full;
   }
@@ -22,7 +26,7 @@
   }
 
   a {
-    @apply text-teal-500 hover:text-teal-400;
+    @apply text-teal-600 hover:text-teal-500 dark:hover:text-teal-500;
   }
 
   pre {
