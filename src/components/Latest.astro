@@ -1,0 +1,23 @@
+---
+import { getCollection } from "astro:content";
+import Box from "./Box.astro";
+import LatestItem from "./LatestItem.astro";
+
+let postCollection = await getCollection("posts", post => !post.data.draft);
+
+let posts = postCollection
+  .sort((post1, post2) => post2.data.date.getTime() - post1.data.date.getTime())
+  .slice(0,3)
+  .map(post => ({ 
+    date: post.data.date,
+    title: post.data.title,
+    slug: post.slug,
+   }));
+---
+<Box title="Latest" class="text-slate-600 dark:text-slate-400 h-fit text-base m-3">
+  {posts.map(post => <LatestItem 
+    date={post.date} 
+    title={post.title}
+    slug={post.slug} 
+  />)}
+</Box>
