@@ -13,7 +13,7 @@ const { content } = Astro.props;
   </head>
 
   <h1>{content.title}</h1>
-  <time dateTime={content.date} class="text-sm text-slate-600">
+  <time datetime={content.date} class="text-sm text-slate-600">
     {format(parseISO(content.date), 'LLLL d, yyyy')}
   </time>
     <slot />
