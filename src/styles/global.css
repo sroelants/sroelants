@@ -45,7 +45,22 @@
     @apply md:text-base text-sm;
   }
 
-  
+  ol {
+    @apply m-5
+  }
+
+  ol li {
+      @apply list-decimal my-5
+  }
+
+  p {
+      @apply py-0.5;
+  }
+
+  li::marker {
+      @apply text-teal-500;
+  }
+
 }
 
 @tailwind components;
