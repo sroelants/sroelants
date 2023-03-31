@@ -5,13 +5,7 @@ import { format, parseISO } from "date-fns"
 
 const { content } = Astro.props;
 ---
-<PageLayout>
-  <head>
-    <title>{content.title}</title>
-    <meta name="description" content={content.description} />
-    <meta name="author" content="Sam Roelants" />
-  </head>
-
+<PageLayout title={content.title} description={content.description}>
   <h1>{content.title}</h1>
   <time datetime={content.date} class="text-sm text-slate-600">
     {format(parseISO(content.date), 'LLLL d, yyyy')}

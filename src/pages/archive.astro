@@ -13,7 +13,7 @@ const entries = posts.map(post => ({
   tags: post.data.tags,
 }));
 ---
-<PageLayout>
+<PageLayout title="Archive">
   {entries
     .sort((p1, p2) => p1.date < p2.date ? 1 : -1)
     .map(entry => <ArchiveEntry entry={entry} />)}

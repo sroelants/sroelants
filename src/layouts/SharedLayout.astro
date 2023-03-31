@@ -1,15 +1,21 @@
 ---
 import { DarkModeProvider } from "../components/DarkModeToggle";
 import "../styles/global.css";
----
 
+type Props = {
+  title: string;
+  description?: string | undefined;
+}
+
+const { title, description } = Astro.props;
+---
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="The personal blog of Sam Roelants." />
+    <meta name="description" content={description} />
     <meta name="author" content="Sam Roelants" />
-    <title>Sam Roelants</title>
+    <title>{ title } - Sam Roelants</title>
 
     <script is:inline>
       const theme = localStorage.getItem('theme')
@@ -34,11 +40,7 @@ import "../styles/global.css";
           transition duration-150 ease-linear
           max-w-full overflow-hidden
       `}>
-        <div class="md:w-[1000px] px-4 w-screen py-20 relative">
-          <div class="py-20">
-            <slot />
-          </div>
-        </div>
+        <slot />
       </div>
     </DarkModeProvider>
   </body>
