@@ -54,7 +54,7 @@
   }
 
   p {
-      @apply py-0.5;
+      @apply py-3;
   }
 
   li::marker {
