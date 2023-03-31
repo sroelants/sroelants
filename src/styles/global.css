@@ -50,7 +50,7 @@
   }
 
   ol li {
-      @apply list-decimal my-5
+      @apply list-decimal my-1
   }
 
   p {
