@@ -3,7 +3,7 @@ import PageLayout from "../layouts/PageLayout.astro";
 import ArchiveEntry from "../components/ArchiveEntry.astro";
 import { getCollection } from "astro:content";
 
-const posts = await getCollection("posts");
+let posts = await getCollection("posts", post => !post.data.draft);
 
 const entries = posts.map(post => ({
   title: post.data.title,
