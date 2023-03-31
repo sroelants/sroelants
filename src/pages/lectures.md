@@ -94,10 +94,10 @@ slightest interest in Western classical music, or music in general.
 ## Philosophy
 [History of Ancient Philosophy (Adam Rosenfeld)](https://www.youtube.com/playlist?list=PLSvsx8116eZjRuC0qaZ5UEhybCsYpA-1j): Really great and accessible introduction to classical philosophy,
 from the Presocratics up to the later Roman Stoic philosophers. There are
-reading assignments that go with eac lecture, and I _highly_ reccommend doing 
+reading assignments that go with each lecture, and I _highly_ reccommend doing 
 those so you can fully engage with the arguments being made. Rosenfeld has a 
-knack for bringing some of these arguments alive, and all-out manages to get you
-to engage with these authors in a very dynamic way. Absolutely reccomend.
+knack for bringing some of these arguments alive, and gets you
+to engage with these authors in a very dynamic way. Absolutely recommend.
 
 [History of Modern Philosophy (Adam Rosenfeld)](https://www.youtube.com/playlist?list=PLSvsx8116eZh0pddUx2fGGXceexj0VHjb): The follow-up course to the Ancient Philosophy course, and perhaps
 even more interesting! The course picks out a couple of key figures in the 
