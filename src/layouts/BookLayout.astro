@@ -2,15 +2,16 @@
 import type { CollectionEntry } from "astro:content";
 import PageLayout from "./PageLayout.astro";
 import "./PostLayout.css";
-import { format, parseISO } from "date-fns"
+import { format } from "date-fns"
 
 const book: CollectionEntry<"books"> = Astro.props.book;
 ---
 <PageLayout title={book.data.title}>
   <h1>{book.data.title}</h1>
-  <time datetime={book.data.dateRead.toLocaleDateString()} class="text-sm text-slate-600">
-    {format(book.data.dateRead, 'LLLL d, yyyy')}
-  </time>
+  { book.data.dateRead && (
+    <time datetime={book.data.dateRead.toLocaleDateString()} class="text-sm text-slate-600">
+      {format(book.data.dateRead, 'LLLL d, yyyy')}
+    </time>
+  )}
     <slot />
 </PageLayout>
-
