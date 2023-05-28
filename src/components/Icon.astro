@@ -1,4 +1,9 @@
 ---
 import Icon from "astro-icon"
 ---
-<Icon name={`feather:${Astro.props.name}`} class="w-4 mr-2 text-teal-600 dark:text-teal-700" />
+<div class="w-4 h-4 mr-2">
+  <Icon 
+    name={`feather:${Astro.props.name}`} 
+    class="w-4 h-4 text-teal-600 dark:text-teal-700" 
+  />
+</div>

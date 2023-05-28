@@ -7,7 +7,9 @@ import Latest from "../components/Latest.astro";
 import SharedLayout from "../layouts/SharedLayout.astro";
 
 const books = await getCollection("books");
-const currentlyReading = books.filter(book => !book.data.dateRead)[0];
+const currentlyReading = books.filter(book => !book.data.dateRead);
+
+console.log("Currently reading", currentlyReading);
 
 ---
 <SharedLayout title="Home" description="The personal website of Sam Roelants">
@@ -38,14 +40,14 @@ const currentlyReading = books.filter(book => !book.data.dateRead)[0];
           <DarkModeToggle client:load />
         </div>
         <Box title="Now" class="text-slate-600 dark:text-slate-400 h-fit text-base m-3">
-          {currentlyReading && (
-            <div class="flex items-center">
-              <Icon name="book" /> 
-              {currentlyReading.data.author} 
-              &mdash;
-              {currentlyReading.data.title}
-            </div>
-          )}
+          { currentlyReading.map(book => {
+            return (
+              <div class="flex items-center">
+                <Icon name="book" />
+                {book.data.author} &mdash; {book.data.title}
+              </div>
+            );
+          })}
 
           <div class="flex items-center">
             <Icon name="headphones" /> Gustav Mahler &mdash; Symphony n.2
