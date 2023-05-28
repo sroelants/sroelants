@@ -11,6 +11,17 @@ const postCollection = defineCollection({
   }),
 });
 
+export const bookCollection = defineCollection({
+  schema: z.object({
+    title: z.string(),
+    author: z.string(),
+    published: z.number(),
+    dateRead: z.string().transform((str: string) => new Date(str)).optional(),
+    stars: z.number().optional()
+  })
+});
+
 export const collections = {
-  posts: postCollection
+  posts: postCollection,
+  books: bookCollection
 };
