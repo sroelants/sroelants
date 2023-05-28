@@ -11,7 +11,7 @@ type Props = {
 const { title, description } = Astro.props;
 ---
 <SharedLayout title={title} description={description}>
-  <div class="md:w-[650px] px-4 w-screen py-20 relative">
+  <div class="md:w-[650px] px-4 w-screen py-20 relative min-h-screen">
     <div class="absolute right-4 md:right-0"><DarkModeToggle client:load /></div>
     <Header />
     <div class="py-20">

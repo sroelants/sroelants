@@ -1,0 +1,50 @@
+---
+import PageLayout from "../layouts/PageLayout.astro";
+import { CollectionEntry, getCollection } from "astro:content";
+import BookshelfEntry from "../components/BookshelfEntry.astro";
+
+type Book = CollectionEntry<"books">;
+const books = await getCollection("books");
+
+const orderBooks = (book1: Book, book2: Book) => {
+  if (!book1.data.dateRead) return -Infinity;
+  if (!book2.data.dateRead) return +Infinity;
+  return book1.data.dateRead < book2.data.dateRead ? 1 : -1;
+}
+
+---
+<PageLayout title="Bookshelf">
+  <p>
+    Throughout the years, I've had periods of semi-rigorously tracking books I
+    was reading at the time, adding some notes or thoughts as I went along.
+    Like most people, I kept this list on <a
+    href="https://www.goodreads.com/user/show/6056293-sam-roelants">Goodreads</a>
+    , a <em>"social media platform for book-lovers"</em>.
+  </p>
+
+  <p>
+    I don't have that many gripes with Goodreads per se, though I was slightly
+    disappointed when Amazon decided to buy them up. In an attempt to
+    self-publish as much as possible on this site &mdash; when it makes sense
+    &mdash; rather than having my online persona be at the mercy of big social
+    media hubs, I decided to experiment with maintaining my reading list on this
+    website.
+  </p>
+
+  <div class="py-3">
+    <h1 class="text-lg pb-2">Currently reading</h1>
+    {books
+      .filter(book => !book.data.dateRead)
+      .map(entry => <BookshelfEntry entry={entry} />)
+    }
+  </div>
+
+  <div class="py-3">
+    <h1 class="text-lg pb-2">Read</h1>
+    {books
+      .filter(book => book.data.dateRead)
+      .sort(orderBooks)
+      .map(entry => <BookshelfEntry entry={entry} />)
+    }
+  </div>
+</PageLayout>

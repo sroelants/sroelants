@@ -1,0 +1,30 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { format } from "date-fns"
+
+const entry: CollectionEntry<"books"> = Astro.props.entry;
+const prettyDate = entry.data.dateRead 
+  ? format(entry.data.dateRead, 'LLLL d, yyyy')
+  : "Currently reading";
+
+const stars = entry.data.stars !== undefined 
+  ? "★".repeat(entry.data.stars).padEnd(5, "☆") 
+  : null;
+---
+<div class="my-4">
+  <div class="relative flex justify-between">
+    <div class="">
+      <div class="flex">{ 
+        entry.body.trim() === ""
+        ? entry.data.title 
+        : <a href={"/books/" + entry.slug}> {entry.data.title }</a>
+      }</div>
+
+      <div class="flex gap-3 text-sm">
+        <div>Author: {entry.data.author}</div>
+        <div>Read: {prettyDate}</div>
+      </div>
+    </div>
+    <div class="mr-2">{stars}</div>
+  </div>
+</div>
