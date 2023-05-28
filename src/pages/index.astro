@@ -1,9 +1,14 @@
 ---
+import { getCollection } from "astro:content";
 import Box from "../components/Box.astro";
 import { DarkModeToggle } from "../components/DarkModeToggle";
 import Icon from "../components/Icon.astro";
 import Latest from "../components/Latest.astro";
 import SharedLayout from "../layouts/SharedLayout.astro";
+
+const books = await getCollection("books");
+const currentlyReading = books.filter(book => !book.data.dateRead)[0];
+
 ---
 <SharedLayout title="Home" description="The personal website of Sam Roelants">
   <div class="md:w-[1000px] px-4 w-screen py-20 relative">
@@ -19,9 +24,10 @@ import SharedLayout from "../layouts/SharedLayout.astro";
           Explorations in programming, music, or whatever else happened to cross my mind.
         </div>
 
-        <div class="flex justify-between w-5/12 text-base text-teal-600">
+        <div class="flex justify-between w-7/12 text-base text-teal-600">
         <a href="./about">About</a>
         <a href="./archive">Writing</a>
+        <a href="./books">Books</a>
         <a href="https://github.com/sroelants">Code</a>
         <a href="mailto://sam@samroelants.com">Contact</a>
         </div>
@@ -32,9 +38,14 @@ import SharedLayout from "../layouts/SharedLayout.astro";
           <DarkModeToggle client:load />
         </div>
         <Box title="Now" class="text-slate-600 dark:text-slate-400 h-fit text-base m-3">
-          <div class="flex items-center">
-            <Icon name="book" /> Alexander Pushkin &mdash; Eugene Onegin
-          </div>
+          {currentlyReading && (
+            <div class="flex items-center">
+              <Icon name="book" /> 
+              {currentlyReading.data.author} 
+              &mdash;
+              {currentlyReading.data.title}
+            </div>
+          )}
 
           <div class="flex items-center">
             <Icon name="headphones" /> Gustav Mahler &mdash; Symphony n.2
