@@ -23,7 +23,7 @@ It's currently sitting at a comfortable 3200 Elo, which is a respectable rating
 for an HCE engine like Simbelmyne. Still, it would be nice to get it to join the
 3400 ranks along with Weiss, Integral HCE, and Sirius. I also tentatively
 started some work on a chess engine in Zig, in an aspiration to learn some more
-Zig. (Funnily enough, Martin from the Stockfish/Ep Discord has already opened
+Zig. (Funnily enough, Martin from the Stockfish/EP Discord has already opened
 a PR [for adding kindergarten bitboards!](https://github.com/sroelants/zigzwang/pull/1)
 
 Other projects were mostly chess-adjacent:
@@ -98,7 +98,6 @@ become so used to from languages like Rust, ML, and Zig. I feel like Gleam
 _very_ cleanly fills that niche. Being backed by the Erlang virtual machine, 
 it also neatly fills Go's niche of a _simple_ garbage collected language that
 also makes it easy to write highly concurrent programs.
-
 
 [wasm-challenges]: https://github.com/danprince/wasm-challenges
 
