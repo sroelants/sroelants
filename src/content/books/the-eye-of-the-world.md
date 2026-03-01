@@ -1,5 +1,5 @@
 ---
-title: "The Eye of the World (Wheel of Time #1)"
+title: "The Eye of the World"
 author: "Robert Jordan"
 published: 1990
 dateRead: "2025-09-01"
