@@ -3,7 +3,7 @@ title: "The Eye of the World"
 author: "Robert Jordan"
 published: 1990
 dateRead: "2025-09-01"
-starts: 3
+stars: 3
 ---
 
 Not terrible, but a little disappointed with just how "young adult" it felt.
