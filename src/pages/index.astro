@@ -5,7 +5,7 @@ import { DarkModeToggle } from "../components/DarkModeToggle";
 import Icon from "../components/Icon.astro";
 import Latest from "../components/Latest.astro";
 import SharedLayout from "../layouts/SharedLayout.astro";
-import location from "../location.json";
+import now from "../now.json";
 
 const books = await getCollection("books");
 const currentlyReading = books.filter(book => !book.data.dateRead);
@@ -41,18 +41,22 @@ const currentlyReading = books.filter(book => !book.data.dateRead);
           { currentlyReading.map(book => {
             return (
               <div class="flex items-center">
-                <Icon name="book" />
+                <Icon name="feather:book" />
                 {book.data.author} &mdash; {book.data.title}
               </div>
             );
           })}
 
           <div class="flex items-center">
-            <Icon name="headphones" /> Sufjan Stevens - Songs for Christmas
+            <Icon name="feather:headphones" /> {now.listening}
           </div>
 
           <div class="flex items-center">
-            <Icon name="map-pin" /> {location}
+            <Icon name="lucide:gamepad-2" /> {now.playing}
+          </div>
+
+          <div class="flex items-center">
+            <Icon name="feather:map-pin" /> {now.location}
           </div>
         </Box>
 
