@@ -2,7 +2,7 @@
 title: "The Eye of the World"
 author: "Robert Jordan"
 published: 1990
-dateRead: "2025-09-01"
+dateRead: "2026-02-21"
 stars: 3
 ---
 
