@@ -2,7 +2,7 @@
 title: "The Great Hunt"
 author: "Robert Jordan"
 published: 1990
-finished: 2026-03-10
+dateRead: "2026-03-10"
 stars: 3
 ---
 
