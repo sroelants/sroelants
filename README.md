@@ -1,4 +1,4 @@
-Having become increasingly dissatisfied with the direction Github has taken over the last decade, I've decided to actively minimize my involvement with the platform. I would wholeheartedly encourage anyone that feels the same way to seek out alternative platforms, or self-hosted solutions, if they are able.
+Having become increasingly dissatisfied with the direction Github has taken over the last decade, I've decided to actively minimize my involvement with the platform. I would wholeheartedly encourage anyone that feels the same way to seek out alternative platforms, or self-hosted solutions, insofar as they are able.
 
 A couple of alternatives I can recommend:
 
