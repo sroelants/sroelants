@@ -7,4 +7,4 @@ A couple of alternatives I can recommend:
 - [Forgejo (self-hosted)](https://forgejo.org)
 - [Tangled](https://tangled.org/)
 
-If you're looking for something that used to live here, or you want to know what I'm tinkering on, [look no further](https://git.samroelants.com).
+If you're looking for something that used to live here, or you want to know what I'm tinkering on, [look no further](https://git.samroelants.com/sroelants).
